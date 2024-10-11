@@ -1,0 +1,10 @@
+C:\Users\Raul\source\repos\MvpTracker\MvpTracker\bin\Debug\MvpTracker.exe.config
+C:\Users\Raul\source\repos\MvpTracker\MvpTracker\bin\Debug\MvpTracker.exe
+C:\Users\Raul\source\repos\MvpTracker\MvpTracker\bin\Debug\MvpTracker.pdb
+C:\Users\Raul\source\repos\MvpTracker\MvpTracker\obj\Debug\MvpTracker.csproj.AssemblyReference.cache
+C:\Users\Raul\source\repos\MvpTracker\MvpTracker\obj\Debug\MvpTracker.Form1.resources
+C:\Users\Raul\source\repos\MvpTracker\MvpTracker\obj\Debug\MvpTracker.Properties.Resources.resources
+C:\Users\Raul\source\repos\MvpTracker\MvpTracker\obj\Debug\MvpTracker.csproj.GenerateResource.cache
+C:\Users\Raul\source\repos\MvpTracker\MvpTracker\obj\Debug\MvpTracker.csproj.CoreCompileInputs.cache
+C:\Users\Raul\source\repos\MvpTracker\MvpTracker\obj\Debug\MvpTracker.exe
+C:\Users\Raul\source\repos\MvpTracker\MvpTracker\obj\Debug\MvpTracker.pdb
