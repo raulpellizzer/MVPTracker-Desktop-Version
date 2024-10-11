@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,15 +13,30 @@ namespace MvpTracker
 {
     public partial class Form1 : Form
     {
+        //public ArrayList mvpsKilled = new ArrayList();
+        //public Dictionary<string, string> mvpKilled = new Dictionary<string, string>();
+
+        ArrayList mvpsKilled = new ArrayList();
+
         public Form1()
         {
             InitializeComponent();
             txtBoxNextRespawns.ForeColor = Color.Red;
         }
 
+
         private void btnBaphomet_Click(object sender, EventArgs e)
         {
-            txtBoxNextRespawns.AppendText(btnBaphomet.Text);
+            //DateTime nextRespawn = DateTime.Now.AddHours(1);
+            DateTime nextRespawn = DateTime.Now.AddMinutes(1);
+
+            Mvp mvp = new Mvp();
+            mvp.Name = txtBoxNextRespawns.Text;
+            mvp.Date = nextRespawn;
+
+            mvpsKilled.Add(mvp);
+
+            txtBoxNextRespawns.AppendText(btnBaphomet.Text + " - " + mvp.Date);
             txtBoxNextRespawns.AppendText(Environment.NewLine);
         }
 
@@ -159,6 +175,30 @@ namespace MvpTracker
         private void btnTest_Click(object sender, EventArgs e)
         {
             // code or function to be tested
+            /*
+            DateTime currentDate = DateTime.Now;
+            DateTime nextRespawn = currentDate.AddHours(1);
+            MessageBox.Show(currentDate.ToString() + "  -  " + nextRespawn.ToString());
+            */
+            //MessageBox.Show(mvpsKilled.Count.ToString());
+
+            if(mvpsKilled.Count > 0)
+            {
+                for (int i = 0; i < mvpsKilled.Count; i++)
+                {
+                    MessageBox.Show(mvpsKilled.IndexOf("Baphomet"));
+                }
+            }
+        }
+
+        // perform all MVP checks in a single timer, every minute
+        private void testTimer_Tick(object sender, EventArgs e)
+        {
+            if(mvpsKilled.Contains("Baphomet"))
+            {
+                MessageBox.Show("encontrei");
+            }
+            
         }
     }
 }

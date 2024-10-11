@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtBoxNextRespawns = new System.Windows.Forms.TextBox();
             this.gpBoxMvp = new System.Windows.Forms.GroupBox();
+            this.btnTest = new System.Windows.Forms.Button();
             this.btnTurtleGeneral = new System.Windows.Forms.Button();
             this.btnPhreeoni = new System.Windows.Forms.Button();
             this.btnPharaoh = new System.Windows.Forms.Button();
@@ -57,7 +59,7 @@
             this.btnBaphomet = new System.Windows.Forms.Button();
             this.btnDoppelganger = new System.Windows.Forms.Button();
             this.txtBoxPossiblyAlive = new System.Windows.Forms.TextBox();
-            this.btnTest = new System.Windows.Forms.Button();
+            this.testTimer = new System.Windows.Forms.Timer(this.components);
             this.gpBoxMvp.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,7 +67,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(579, 34);
+            this.label1.Location = new System.Drawing.Point(665, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(177, 29);
             this.label1.TabIndex = 0;
@@ -138,6 +140,16 @@
             this.gpBoxMvp.TabIndex = 5;
             this.gpBoxMvp.TabStop = false;
             this.gpBoxMvp.Text = "MVPs Killed";
+            // 
+            // btnTest
+            // 
+            this.btnTest.Location = new System.Drawing.Point(240, 404);
+            this.btnTest.Name = "btnTest";
+            this.btnTest.Size = new System.Drawing.Size(75, 23);
+            this.btnTest.TabIndex = 25;
+            this.btnTest.Text = "Test";
+            this.btnTest.UseVisualStyleBackColor = true;
+            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
             // btnTurtleGeneral
             // 
@@ -381,21 +393,17 @@
             this.txtBoxPossiblyAlive.Size = new System.Drawing.Size(310, 420);
             this.txtBoxPossiblyAlive.TabIndex = 6;
             // 
-            // btnTest
+            // testTimer
             // 
-            this.btnTest.Location = new System.Drawing.Point(240, 404);
-            this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(75, 23);
-            this.btnTest.TabIndex = 25;
-            this.btnTest.Text = "Test";
-            this.btnTest.UseVisualStyleBackColor = true;
-            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
+            this.testTimer.Enabled = true;
+            this.testTimer.Interval = 500;
+            this.testTimer.Tick += new System.EventHandler(this.testTimer_Tick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1727, 605);
+            this.ClientSize = new System.Drawing.Size(1608, 605);
             this.Controls.Add(this.txtBoxPossiblyAlive);
             this.Controls.Add(this.gpBoxMvp);
             this.Controls.Add(this.txtBoxNextRespawns);
@@ -403,6 +411,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MVP Tracker";
             this.gpBoxMvp.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -442,6 +451,7 @@
         private System.Windows.Forms.Button btnTurtleGeneral;
         private System.Windows.Forms.TextBox txtBoxPossiblyAlive;
         private System.Windows.Forms.Button btnTest;
+        private System.Windows.Forms.Timer testTimer;
     }
 }
 
