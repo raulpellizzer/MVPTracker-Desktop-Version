@@ -8,3 +8,17 @@ C:\Users\Raul\source\repos\MvpTracker\MvpTracker\obj\Debug\MvpTracker.csproj.Gen
 C:\Users\Raul\source\repos\MvpTracker\MvpTracker\obj\Debug\MvpTracker.csproj.CoreCompileInputs.cache
 C:\Users\Raul\source\repos\MvpTracker\MvpTracker\obj\Debug\MvpTracker.exe
 C:\Users\Raul\source\repos\MvpTracker\MvpTracker\obj\Debug\MvpTracker.pdb
+C:\Users\Raul\source\repos\MvpTracker\MvpTracker\bin\Debug\Microsoft.Data.Sqlite.dll
+C:\Users\Raul\source\repos\MvpTracker\MvpTracker\bin\Debug\SQLitePCLRaw.batteries_v2.dll
+C:\Users\Raul\source\repos\MvpTracker\MvpTracker\bin\Debug\SQLitePCLRaw.core.dll
+C:\Users\Raul\source\repos\MvpTracker\MvpTracker\bin\Debug\SQLitePCLRaw.provider.dynamic_cdecl.dll
+C:\Users\Raul\source\repos\MvpTracker\MvpTracker\bin\Debug\System.Buffers.dll
+C:\Users\Raul\source\repos\MvpTracker\MvpTracker\bin\Debug\System.Memory.dll
+C:\Users\Raul\source\repos\MvpTracker\MvpTracker\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Raul\source\repos\MvpTracker\MvpTracker\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Raul\source\repos\MvpTracker\MvpTracker\bin\Debug\Microsoft.Data.Sqlite.xml
+C:\Users\Raul\source\repos\MvpTracker\MvpTracker\bin\Debug\System.Buffers.xml
+C:\Users\Raul\source\repos\MvpTracker\MvpTracker\bin\Debug\System.Memory.xml
+C:\Users\Raul\source\repos\MvpTracker\MvpTracker\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Raul\source\repos\MvpTracker\MvpTracker\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Raul\source\repos\MvpTracker\MvpTracker\obj\Debug\MvpTracker.csproj.Up2Date
