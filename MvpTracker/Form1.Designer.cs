@@ -59,7 +59,7 @@
             this.btnBaphomet = new System.Windows.Forms.Button();
             this.btnDoppelganger = new System.Windows.Forms.Button();
             this.txtBoxPossiblyAlive = new System.Windows.Forms.TextBox();
-            this.testTimer = new System.Windows.Forms.Timer(this.components);
+            this.mvpTimer = new System.Windows.Forms.Timer(this.components);
             this.gpBoxMvp.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -385,6 +385,7 @@
             // 
             this.txtBoxPossiblyAlive.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtBoxPossiblyAlive.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBoxPossiblyAlive.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxPossiblyAlive.Location = new System.Drawing.Point(1209, 144);
             this.txtBoxPossiblyAlive.Multiline = true;
             this.txtBoxPossiblyAlive.Name = "txtBoxPossiblyAlive";
@@ -393,11 +394,11 @@
             this.txtBoxPossiblyAlive.Size = new System.Drawing.Size(310, 420);
             this.txtBoxPossiblyAlive.TabIndex = 6;
             // 
-            // testTimer
+            // mvpTimer
             // 
-            this.testTimer.Enabled = true;
-            this.testTimer.Interval = 500;
-            this.testTimer.Tick += new System.EventHandler(this.testTimer_Tick);
+            this.mvpTimer.Enabled = true;
+            this.mvpTimer.Interval = 5000;
+            this.mvpTimer.Tick += new System.EventHandler(this.mvpTimer_Tick);
             // 
             // Form1
             // 
@@ -451,7 +452,7 @@
         private System.Windows.Forms.Button btnTurtleGeneral;
         private System.Windows.Forms.TextBox txtBoxPossiblyAlive;
         private System.Windows.Forms.Button btnTest;
-        private System.Windows.Forms.Timer testTimer;
+        private System.Windows.Forms.Timer mvpTimer;
     }
 }
 

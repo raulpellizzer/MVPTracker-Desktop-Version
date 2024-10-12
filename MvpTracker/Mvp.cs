@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MvpTracker
 {
@@ -15,5 +16,6 @@ namespace MvpTracker
 
         public string Name { get; set; }
         public DateTime Date { get; set; }
+        public Control buttonControl { get; set; }
     }
 }
