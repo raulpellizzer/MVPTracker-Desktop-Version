@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 /*
- * To-do: Implement function that when you kill the MVP again it REMOVES the MVP from the 'Possibly Alive' list.
+ * To-do: -
  * 
  * 
  * 
@@ -30,6 +30,10 @@ namespace MvpTracker
             txtBoxPossiblyAlive.ForeColor = Color.Green;
         }
 
+        /*
+         * Updates text in the text boxes, adding the MVP to either one of the lists, Next Respawn or Possibly Alive
+         * 
+         */
         public void UpdateTextBox(List<Mvp> mvpsKilled, string control)
         {
             if (control == "nextrespawn")
@@ -43,12 +47,30 @@ namespace MvpTracker
             } else
             {
                 txtBoxPossiblyAlive.Clear();
-                foreach (var mvp in mvpsKilled)
+                foreach (var mvp in mvpsAlive)
                 {
                     txtBoxPossiblyAlive.AppendText(mvp.Name);
                     txtBoxPossiblyAlive.AppendText(Environment.NewLine);
                 }
             }
+        }
+
+        /*
+         * When the MVP is killed, remove MVP from Possibly Alive
+         * 
+         */
+        public void ClearMvpFromAliveList(Mvp mvpKilled)
+        {
+            for (int i = 0; i < mvpsAlive.Count; i++)
+            {
+                if (mvpsAlive[i].Name == mvpKilled.Name)
+                {
+                    mvpsAlive.RemoveAt(i);
+                    break;
+                }
+            }
+
+            UpdateTextBox(mvpsAlive, "alive");
         }
 
         private void btnBaphomet_Click(object sender, EventArgs e)
@@ -63,181 +85,360 @@ namespace MvpTracker
             mvp.buttonControl = btnBaphomet;
 
             mvpsKilled.Add(mvp);
-            
-
+            ClearMvpFromAliveList(mvp);
             UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnDarkLord_Click(object sender, EventArgs e)
         {
+            btnDarkLord.Enabled = false;
             //DateTime nextRespawn = DateTime.Now.AddHours(1);
             DateTime nextRespawn = DateTime.Now.AddSeconds(15);
 
             Mvp mvp = new Mvp();
             mvp.Name = btnDarkLord.Text;
             mvp.Date = nextRespawn;
+            mvp.buttonControl = btnDarkLord;
 
             mvpsKilled.Add(mvp);
-
+            ClearMvpFromAliveList(mvp);
             UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnDoppelganger_Click(object sender, EventArgs e)
         {
+            btnDoppelganger.Enabled = false;
             //DateTime nextRespawn = DateTime.Now.AddHours(1);
             DateTime nextRespawn = DateTime.Now.AddSeconds(15);
 
             Mvp mvp = new Mvp();
             mvp.Name = btnDoppelganger.Text;
             mvp.Date = nextRespawn;
+            mvp.buttonControl = btnDoppelganger;
 
             mvpsKilled.Add(mvp);
-
+            ClearMvpFromAliveList(mvp);
             UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnDracula_Click(object sender, EventArgs e)
         {
+            btnDracula.Enabled = false;
             //DateTime nextRespawn = DateTime.Now.AddHours(1);
             DateTime nextRespawn = DateTime.Now.AddSeconds(15);
 
             Mvp mvp = new Mvp();
             mvp.Name = btnDracula.Text;
             mvp.Date = nextRespawn;
+            mvp.buttonControl = btnDracula;
 
             mvpsKilled.Add(mvp);
-
+            ClearMvpFromAliveList(mvp);
             UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnDrake_Click(object sender, EventArgs e)
         {
+            btnDrake.Enabled = false;
             //DateTime nextRespawn = DateTime.Now.AddHours(1);
             DateTime nextRespawn = DateTime.Now.AddSeconds(15);
 
             Mvp mvp = new Mvp();
             mvp.Name = btnDrake.Text;
             mvp.Date = nextRespawn;
+            mvp.buttonControl = btnDrake;
 
             mvpsKilled.Add(mvp);
-
+            ClearMvpFromAliveList(mvp);
             UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnEddga_Click(object sender, EventArgs e)
         {
+            btnEddga.Enabled = false;
             //DateTime nextRespawn = DateTime.Now.AddHours(1);
             DateTime nextRespawn = DateTime.Now.AddSeconds(15);
 
             Mvp mvp = new Mvp();
             mvp.Name = btnEddga.Text;
             mvp.Date = nextRespawn;
+            mvp.buttonControl = btnEddga;
 
             mvpsKilled.Add(mvp);
-
+            ClearMvpFromAliveList(mvp);
             UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnEvilSnakeLord_Click(object sender, EventArgs e)
         {
-            txtBoxNextRespawns.AppendText(btnEvilSnakeLord.Text);
-            txtBoxNextRespawns.AppendText(Environment.NewLine);
+            btnEvilSnakeLord.Enabled = false;
+            //DateTime nextRespawn = DateTime.Now.AddHours(1);
+            DateTime nextRespawn = DateTime.Now.AddSeconds(15);
+
+            Mvp mvp = new Mvp();
+            mvp.Name = btnEvilSnakeLord.Text;
+            mvp.Date = nextRespawn;
+            mvp.buttonControl = btnEvilSnakeLord;
+
+            mvpsKilled.Add(mvp);
+            ClearMvpFromAliveList(mvp);
+            UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnHatii_Click(object sender, EventArgs e)
         {
-            txtBoxNextRespawns.AppendText(btnHatii.Text);
-            txtBoxNextRespawns.AppendText(Environment.NewLine);
+            btnHatii.Enabled = false;
+            //DateTime nextRespawn = DateTime.Now.AddHours(1);
+            DateTime nextRespawn = DateTime.Now.AddSeconds(15);
+
+            Mvp mvp = new Mvp();
+            mvp.Name = btnHatii.Text;
+            mvp.Date = nextRespawn;
+            mvp.buttonControl = btnHatii;
+
+            mvpsKilled.Add(mvp);
+            ClearMvpFromAliveList(mvp);
+            UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnGTB_Click(object sender, EventArgs e)
         {
-            txtBoxNextRespawns.AppendText(btnGTB.Text);
-            txtBoxNextRespawns.AppendText(Environment.NewLine);
+            btnGTB.Enabled = false;
+            //DateTime nextRespawn = DateTime.Now.AddHours(1);
+            DateTime nextRespawn = DateTime.Now.AddSeconds(15);
+
+            Mvp mvp = new Mvp();
+            mvp.Name = btnGTB.Text;
+            mvp.Date = nextRespawn;
+            mvp.buttonControl = btnGTB;
+
+            mvpsKilled.Add(mvp);
+            ClearMvpFromAliveList(mvp);
+            UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnHela_Click(object sender, EventArgs e)
         {
-            txtBoxNextRespawns.AppendText(btnHela.Text);
-            txtBoxNextRespawns.AppendText(Environment.NewLine);
+            btnHela.Enabled = false;
+            //DateTime nextRespawn = DateTime.Now.AddHours(1);
+            DateTime nextRespawn = DateTime.Now.AddSeconds(15);
+
+            Mvp mvp = new Mvp();
+            mvp.Name = btnHela.Text;
+            mvp.Date = nextRespawn;
+            mvp.buttonControl = btnHela;
+
+            mvpsKilled.Add(mvp);
+            ClearMvpFromAliveList(mvp);
+            UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnScaraba_Click(object sender, EventArgs e)
         {
-            txtBoxNextRespawns.AppendText(btnScaraba.Text);
-            txtBoxNextRespawns.AppendText(Environment.NewLine);
+            btnScaraba.Enabled = false;
+            //DateTime nextRespawn = DateTime.Now.AddHours(1);
+            DateTime nextRespawn = DateTime.Now.AddSeconds(15);
+
+            Mvp mvp = new Mvp();
+            mvp.Name = btnScaraba.Text;
+            mvp.Date = nextRespawn;
+            mvp.buttonControl = btnScaraba;
+
+            mvpsKilled.Add(mvp);
+            ClearMvpFromAliveList(mvp);
+            UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnStormyKnight_Click(object sender, EventArgs e)
         {
-            txtBoxNextRespawns.AppendText(btnStormyKnight.Text);
-            txtBoxNextRespawns.AppendText(Environment.NewLine);
+            btnStormyKnight.Enabled = false;
+            //DateTime nextRespawn = DateTime.Now.AddHours(1);
+            DateTime nextRespawn = DateTime.Now.AddSeconds(15);
+
+            Mvp mvp = new Mvp();
+            mvp.Name = btnStormyKnight.Text;
+            mvp.Date = nextRespawn;
+            mvp.buttonControl = btnStormyKnight;
+
+            mvpsKilled.Add(mvp);
+            ClearMvpFromAliveList(mvp);
+            UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnLordOfDeath_Click(object sender, EventArgs e)
         {
-            txtBoxNextRespawns.AppendText(btnLordOfDeath.Text);
-            txtBoxNextRespawns.AppendText(Environment.NewLine);
+            btnLordOfDeath.Enabled = false;
+            //DateTime nextRespawn = DateTime.Now.AddHours(1);
+            DateTime nextRespawn = DateTime.Now.AddSeconds(15);
+
+            Mvp mvp = new Mvp();
+            mvp.Name = btnLordOfDeath.Text;
+            mvp.Date = nextRespawn;
+            mvp.buttonControl = btnLordOfDeath;
+
+            mvpsKilled.Add(mvp);
+            ClearMvpFromAliveList(mvp);
+            UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnMayaPurple_Click(object sender, EventArgs e)
         {
-            txtBoxNextRespawns.AppendText(btnMayaPurple.Text);
-            txtBoxNextRespawns.AppendText(Environment.NewLine);
+            btnMayaPurple.Enabled = false;
+            //DateTime nextRespawn = DateTime.Now.AddHours(1);
+            DateTime nextRespawn = DateTime.Now.AddSeconds(15);
+
+            Mvp mvp = new Mvp();
+            mvp.Name = btnMayaPurple.Text;
+            mvp.Date = nextRespawn;
+            mvp.buttonControl = btnMayaPurple;
+
+            mvpsKilled.Add(mvp);
+            ClearMvpFromAliveList(mvp);
+            UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnMaya_Click(object sender, EventArgs e)
         {
-            txtBoxNextRespawns.AppendText(btnMaya.Text);
-            txtBoxNextRespawns.AppendText(Environment.NewLine);
+            btnMaya.Enabled = false;
+            //DateTime nextRespawn = DateTime.Now.AddHours(1);
+            DateTime nextRespawn = DateTime.Now.AddSeconds(15);
+
+            Mvp mvp = new Mvp();
+            mvp.Name = btnMaya.Text;
+            mvp.Date = nextRespawn;
+            mvp.buttonControl = btnMaya;
+
+            mvpsKilled.Add(mvp);
+            ClearMvpFromAliveList(mvp);
+            UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnMistress_Click(object sender, EventArgs e)
         {
-            txtBoxNextRespawns.AppendText(btnMistress.Text);
-            txtBoxNextRespawns.AppendText(Environment.NewLine);
+            btnMistress.Enabled = false;
+            //DateTime nextRespawn = DateTime.Now.AddHours(1);
+            DateTime nextRespawn = DateTime.Now.AddSeconds(15);
+
+            Mvp mvp = new Mvp();
+            mvp.Name = btnMistress.Text;
+            mvp.Date = nextRespawn;
+            mvp.buttonControl = btnMistress;
+
+            mvpsKilled.Add(mvp);
+            ClearMvpFromAliveList(mvp);
+            UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnMoonlightFlower_Click(object sender, EventArgs e)
         {
-            txtBoxNextRespawns.AppendText(btnMoonlightFlower.Text);
-            txtBoxNextRespawns.AppendText(Environment.NewLine);
+            btnMoonlightFlower.Enabled = false;
+            //DateTime nextRespawn = DateTime.Now.AddHours(1);
+            DateTime nextRespawn = DateTime.Now.AddSeconds(15);
+
+            Mvp mvp = new Mvp();
+            mvp.Name = btnMoonlightFlower.Text;
+            mvp.Date = nextRespawn;
+            mvp.buttonControl = btnMoonlightFlower;
+
+            mvpsKilled.Add(mvp);
+            ClearMvpFromAliveList(mvp);
+            UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnOrcHero_Click(object sender, EventArgs e)
         {
-            txtBoxNextRespawns.AppendText(btnOrcHero.Text);
-            txtBoxNextRespawns.AppendText(Environment.NewLine);
+            btnOrcHero.Enabled = false;
+            //DateTime nextRespawn = DateTime.Now.AddHours(1);
+            DateTime nextRespawn = DateTime.Now.AddSeconds(15);
+
+            Mvp mvp = new Mvp();
+            mvp.Name = btnOrcHero.Text;
+            mvp.Date = nextRespawn;
+            mvp.buttonControl = btnOrcHero;
+
+            mvpsKilled.Add(mvp);
+            ClearMvpFromAliveList(mvp);
+            UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnOrcLord_Click(object sender, EventArgs e)
         {
-            txtBoxNextRespawns.AppendText(btnOrcLord.Text);
-            txtBoxNextRespawns.AppendText(Environment.NewLine);
+            btnOrcLord.Enabled = false;
+            //DateTime nextRespawn = DateTime.Now.AddHours(1);
+            DateTime nextRespawn = DateTime.Now.AddSeconds(15);
+
+            Mvp mvp = new Mvp();
+            mvp.Name = btnOrcLord.Text;
+            mvp.Date = nextRespawn;
+            mvp.buttonControl = btnOrcLord;
+
+            mvpsKilled.Add(mvp);
+            ClearMvpFromAliveList(mvp);
+            UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnOsiris_Click(object sender, EventArgs e)
         {
-            txtBoxNextRespawns.AppendText(btnOsiris.Text);
-            txtBoxNextRespawns.AppendText(Environment.NewLine);
+            btnOsiris.Enabled = false;
+            //DateTime nextRespawn = DateTime.Now.AddHours(1);
+            DateTime nextRespawn = DateTime.Now.AddSeconds(15);
+
+            Mvp mvp = new Mvp();
+            mvp.Name = btnOsiris.Text;
+            mvp.Date = nextRespawn;
+            mvp.buttonControl = btnOsiris;
+
+            mvpsKilled.Add(mvp);
+            ClearMvpFromAliveList(mvp);
+            UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnPharaoh_Click(object sender, EventArgs e)
         {
-            txtBoxNextRespawns.AppendText(btnPharaoh.Text);
-            txtBoxNextRespawns.AppendText(Environment.NewLine);
+            btnPharaoh.Enabled = false;
+            //DateTime nextRespawn = DateTime.Now.AddHours(1);
+            DateTime nextRespawn = DateTime.Now.AddSeconds(15);
+
+            Mvp mvp = new Mvp();
+            mvp.Name = btnPharaoh.Text;
+            mvp.Date = nextRespawn;
+            mvp.buttonControl = btnPharaoh;
+
+            mvpsKilled.Add(mvp);
+            ClearMvpFromAliveList(mvp);
+            UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnPhreeoni_Click(object sender, EventArgs e)
         {
-            txtBoxNextRespawns.AppendText(btnPhreeoni.Text);
-            txtBoxNextRespawns.AppendText(Environment.NewLine);
+            btnPhreeoni.Enabled = false;
+            //DateTime nextRespawn = DateTime.Now.AddHours(1);
+            DateTime nextRespawn = DateTime.Now.AddSeconds(15);
+
+            Mvp mvp = new Mvp();
+            mvp.Name = btnPhreeoni.Text;
+            mvp.Date = nextRespawn;
+            mvp.buttonControl = btnPhreeoni ;
+
+            mvpsKilled.Add(mvp);
+            ClearMvpFromAliveList(mvp);
+            UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnTurtleGeneral_Click(object sender, EventArgs e)
         {
-            txtBoxNextRespawns.AppendText(btnTurtleGeneral.Text);
-            txtBoxNextRespawns.AppendText(Environment.NewLine);
+            btnTurtleGeneral.Enabled = false;
+            //DateTime nextRespawn = DateTime.Now.AddHours(1);
+            DateTime nextRespawn = DateTime.Now.AddSeconds(15);
+
+            Mvp mvp = new Mvp();
+            mvp.Name = btnTurtleGeneral.Text;
+            mvp.Date = nextRespawn;
+            mvp.buttonControl = btnTurtleGeneral;
+
+            mvpsKilled.Add(mvp);
+            ClearMvpFromAliveList(mvp);
+            UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnTest_Click(object sender, EventArgs e)
@@ -248,12 +449,10 @@ namespace MvpTracker
         // perform all MVP checks in a single timer, every minute
         private void mvpTimer_Tick(object sender, EventArgs e)
         {
-            //for (int i = 0; i < mvpsKilled.Count; i++)
             foreach (var mvp in mvpsKilled)
             {
                 if (DateTime.Now > mvp.Date)
                 {
-                    // think of a way to re-enable the mvp button
                     mvp.buttonControl.Enabled = true;
                     mvpsKilled.Remove(mvp);
                     mvpsAlive.Add(mvp);
