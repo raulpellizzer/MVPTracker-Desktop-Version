@@ -2,7 +2,6 @@ C:\Users\Raul\source\repos\MvpTracker\MvpTracker\bin\Debug\MvpTracker.exe.config
 C:\Users\Raul\source\repos\MvpTracker\MvpTracker\bin\Debug\MvpTracker.exe
 C:\Users\Raul\source\repos\MvpTracker\MvpTracker\bin\Debug\MvpTracker.pdb
 C:\Users\Raul\source\repos\MvpTracker\MvpTracker\obj\Debug\MvpTracker.csproj.AssemblyReference.cache
-C:\Users\Raul\source\repos\MvpTracker\MvpTracker\obj\Debug\MvpTracker.Form1.resources
 C:\Users\Raul\source\repos\MvpTracker\MvpTracker\obj\Debug\MvpTracker.Properties.Resources.resources
 C:\Users\Raul\source\repos\MvpTracker\MvpTracker\obj\Debug\MvpTracker.csproj.GenerateResource.cache
 C:\Users\Raul\source\repos\MvpTracker\MvpTracker\obj\Debug\MvpTracker.csproj.CoreCompileInputs.cache
@@ -22,3 +21,5 @@ C:\Users\Raul\source\repos\MvpTracker\MvpTracker\bin\Debug\System.Memory.xml
 C:\Users\Raul\source\repos\MvpTracker\MvpTracker\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\Raul\source\repos\MvpTracker\MvpTracker\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Raul\source\repos\MvpTracker\MvpTracker\obj\Debug\MvpTracker.csproj.Up2Date
+C:\Users\Raul\source\repos\MvpTracker\MvpTracker\obj\Debug\MvpTracker.mvpTrackerForm.resources
+C:\Users\Raul\source\repos\MvpTracker\MvpTracker\obj\Debug\MvpTracker.StatisticsForm.resources
