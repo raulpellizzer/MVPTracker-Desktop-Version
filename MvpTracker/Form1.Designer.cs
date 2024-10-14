@@ -1,6 +1,6 @@
 ﻿namespace MvpTracker
 {
-    partial class Form1
+    partial class mvpTrackerForm
     {
         /// <summary>
         /// Required designer variable.
@@ -397,10 +397,10 @@
             // mvpTimer
             // 
             this.mvpTimer.Enabled = true;
-            this.mvpTimer.Interval = 5000;
+            this.mvpTimer.Interval = 10000;
             this.mvpTimer.Tick += new System.EventHandler(this.mvpTimer_Tick);
             // 
-            // Form1
+            // mvpTrackerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -411,9 +411,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "mvpTrackerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MVP Tracker";
+            this.Load += new System.EventHandler(this.mvpTrackerForm_Load);
             this.gpBoxMvp.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
