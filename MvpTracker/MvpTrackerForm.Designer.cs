@@ -60,6 +60,7 @@
             this.btnDoppelganger = new System.Windows.Forms.Button();
             this.txtBoxPossiblyAlive = new System.Windows.Forms.TextBox();
             this.mvpTimer = new System.Windows.Forms.Timer(this.components);
+            this.btnStatistics = new System.Windows.Forms.Button();
             this.gpBoxMvp.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,7 +68,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(665, 34);
+            this.label1.Location = new System.Drawing.Point(567, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(177, 29);
             this.label1.TabIndex = 0;
@@ -77,7 +78,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(786, 113);
+            this.label2.Location = new System.Drawing.Point(657, 79);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(150, 24);
             this.label2.TabIndex = 1;
@@ -87,7 +88,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1205, 117);
+            this.label3.Location = new System.Drawing.Point(1006, 79);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(145, 24);
             this.label3.TabIndex = 2;
@@ -98,7 +99,7 @@
             this.txtBoxNextRespawns.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtBoxNextRespawns.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBoxNextRespawns.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxNextRespawns.Location = new System.Drawing.Point(790, 140);
+            this.txtBoxNextRespawns.Location = new System.Drawing.Point(661, 106);
             this.txtBoxNextRespawns.Multiline = true;
             this.txtBoxNextRespawns.Name = "txtBoxNextRespawns";
             this.txtBoxNextRespawns.ReadOnly = true;
@@ -133,19 +134,20 @@
             this.gpBoxMvp.Controls.Add(this.btnBaphomet);
             this.gpBoxMvp.Controls.Add(this.btnDoppelganger);
             this.gpBoxMvp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpBoxMvp.Location = new System.Drawing.Point(61, 101);
+            this.gpBoxMvp.Location = new System.Drawing.Point(27, 79);
             this.gpBoxMvp.Name = "gpBoxMvp";
             this.gpBoxMvp.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.gpBoxMvp.Size = new System.Drawing.Size(625, 459);
+            this.gpBoxMvp.Size = new System.Drawing.Size(574, 422);
             this.gpBoxMvp.TabIndex = 5;
             this.gpBoxMvp.TabStop = false;
             this.gpBoxMvp.Text = "MVPs Killed";
             // 
             // btnTest
             // 
-            this.btnTest.Location = new System.Drawing.Point(240, 404);
+            this.btnTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTest.Location = new System.Drawing.Point(529, 393);
             this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(75, 23);
+            this.btnTest.Size = new System.Drawing.Size(39, 23);
             this.btnTest.TabIndex = 25;
             this.btnTest.Text = "Test";
             this.btnTest.UseVisualStyleBackColor = true;
@@ -386,7 +388,7 @@
             this.txtBoxPossiblyAlive.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtBoxPossiblyAlive.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBoxPossiblyAlive.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxPossiblyAlive.Location = new System.Drawing.Point(1209, 144);
+            this.txtBoxPossiblyAlive.Location = new System.Drawing.Point(1010, 106);
             this.txtBoxPossiblyAlive.Multiline = true;
             this.txtBoxPossiblyAlive.Name = "txtBoxPossiblyAlive";
             this.txtBoxPossiblyAlive.ReadOnly = true;
@@ -400,11 +402,23 @@
             this.mvpTimer.Interval = 10000;
             this.mvpTimer.Tick += new System.EventHandler(this.mvpTimer_Tick);
             // 
+            // btnStatistics
+            // 
+            this.btnStatistics.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStatistics.Location = new System.Drawing.Point(27, 519);
+            this.btnStatistics.Name = "btnStatistics";
+            this.btnStatistics.Size = new System.Drawing.Size(162, 28);
+            this.btnStatistics.TabIndex = 26;
+            this.btnStatistics.Text = "MVP Statistics";
+            this.btnStatistics.UseVisualStyleBackColor = true;
+            this.btnStatistics.Click += new System.EventHandler(this.btnStatistics_Click);
+            // 
             // mvpTrackerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1608, 605);
+            this.ClientSize = new System.Drawing.Size(1347, 567);
+            this.Controls.Add(this.btnStatistics);
             this.Controls.Add(this.txtBoxPossiblyAlive);
             this.Controls.Add(this.gpBoxMvp);
             this.Controls.Add(this.txtBoxNextRespawns);
@@ -454,6 +468,7 @@
         private System.Windows.Forms.TextBox txtBoxPossiblyAlive;
         private System.Windows.Forms.Button btnTest;
         private System.Windows.Forms.Timer mvpTimer;
+        private System.Windows.Forms.Button btnStatistics;
     }
 }
 

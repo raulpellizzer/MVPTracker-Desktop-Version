@@ -22,3 +22,4 @@ C:\Users\Raul\source\repos\MvpTracker\MvpTracker\bin\Debug\System.Numerics.Vecto
 C:\Users\Raul\source\repos\MvpTracker\MvpTracker\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Raul\source\repos\MvpTracker\MvpTracker\obj\Debug\MvpTracker.csproj.Up2Date
 C:\Users\Raul\source\repos\MvpTracker\MvpTracker\obj\Debug\MvpTracker.mvpTrackerForm.resources
+C:\Users\Raul\source\repos\MvpTracker\MvpTracker\obj\Debug\MvpTracker.StatisticsForm.resources

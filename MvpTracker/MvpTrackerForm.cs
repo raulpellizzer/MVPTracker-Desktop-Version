@@ -24,9 +24,10 @@ namespace MvpTracker
     public partial class mvpTrackerForm : Form
     {
         public CultureInfo CultureInfo { get; set; } = new CultureInfo("pt-BR");
+        public StatisticsForm StatisticsForm { get; set; }
         List<Mvp> mvpsKilled = new List<Mvp>();
         List<Mvp> mvpsAlive = new List<Mvp>();
-        public string environment = "dev";
+        public string environment = "prod";
         public Database db;
 
         public mvpTrackerForm()
@@ -441,6 +442,22 @@ namespace MvpTracker
 
             btnTest.Enabled = false;
             //btnTest.Visible = false;
+        }
+
+        private void btnStatistics_Click(object sender, EventArgs e)
+        {
+            // new form, possiblt data grid view
+            try
+            {
+                StatisticsForm = new StatisticsForm();
+                StatisticsForm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
         }
     }
 }

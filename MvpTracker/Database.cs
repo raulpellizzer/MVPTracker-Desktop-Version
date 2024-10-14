@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Globalization;
 using System.Windows.Forms;
@@ -18,7 +19,7 @@ namespace MvpTracker
 
         private string ServerName { get; set; }
         private string DatabaseName { get; set; }
-        private string ConnectionString { get; set; }
+        public string ConnectionString { get; set; }
         private SqlConnection Conn { get; set; }
 
         /*
@@ -168,7 +169,7 @@ namespace MvpTracker
             OpenSqlConnection();
             List<Mvp> mvpsKilled = new List<Mvp>();
             SqlCommand command = null;
-            string sqlQuery = "";
+            string sqlQuery;
 
             try
             {
@@ -219,5 +220,32 @@ namespace MvpTracker
             return mvpsKilled;
         }
 
+        public DataSet GetMvpKillingStatistics()
+        {
+            DataSet dataSet = null;
+            string sqlQuery;
+            try
+            {
+                sqlQuery = "SELECT Mvp.name, MvpTracking.killed_count  ";
+                sqlQuery += "FROM MvpTracking  ";
+                sqlQuery += "INNER JOIN Mvp ON MvpTracking.id = Mvp.id ";
+                sqlQuery += "ORDER BY killed_count desc";
+
+                OpenSqlConnection();
+                var dataAdapter = new SqlDataAdapter(sqlQuery, Conn);
+
+                var commandBuilder = new SqlCommandBuilder(dataAdapter);
+                dataSet = new DataSet();
+                dataAdapter.Fill(dataSet);
+                CloseSqlConnection();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error has occured in GetMvpKillingStatistics: {ex.Message}");
+            }
+
+            return dataSet;
+        }
     }
 }
