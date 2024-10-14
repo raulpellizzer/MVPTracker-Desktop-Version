@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Raul\\source\\repos\\MvpTracker\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{309886DB-9D9D-4641-A199-D710AA0F2D6E}|MvpTracker\\MvpTracker.csproj|c:\\users\\raul\\source\\repos\\mvptracker\\mvptracker\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{309886DB-9D9D-4641-A199-D710AA0F2D6E}|MvpTracker\\MvpTracker.csproj|C:\\Users\\Raul\\source\\repos\\MvpTracker\\mvptracker\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{309886DB-9D9D-4641-A199-D710AA0F2D6E}|MvpTracker\\MvpTracker.csproj|solutionrelative:mvptracker\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{309886DB-9D9D-4641-A199-D710AA0F2D6E}|MvpTracker\\MvpTracker.csproj|C:\\Users\\Raul\\source\\repos\\MvpTracker\\mvptracker\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{309886DB-9D9D-4641-A199-D710AA0F2D6E}|MvpTracker\\MvpTracker.csproj|solutionrelative:mvptracker\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{309886DB-9D9D-4641-A199-D710AA0F2D6E}|MvpTracker\\MvpTracker.csproj|C:\\Users\\Raul\\source\\repos\\MvpTracker\\mvptracker\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{309886DB-9D9D-4641-A199-D710AA0F2D6E}|MvpTracker\\MvpTracker.csproj|c:\\users\\raul\\source\\repos\\mvptracker\\mvptracker\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{309886DB-9D9D-4641-A199-D710AA0F2D6E}|MvpTracker\\MvpTracker.csproj|solutionrelative:mvptracker\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{309886DB-9D9D-4641-A199-D710AA0F2D6E}|MvpTracker\\MvpTracker.csproj|C:\\Users\\Raul\\source\\repos\\MvpTracker\\mvptracker\\mvp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{309886DB-9D9D-4641-A199-D710AA0F2D6E}|MvpTracker\\MvpTracker.csproj|solutionrelative:mvptracker\\mvp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{309886DB-9D9D-4641-A199-D710AA0F2D6E}|MvpTracker\\MvpTracker.csproj|c:\\users\\raul\\source\\repos\\mvptracker\\mvptracker\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{309886DB-9D9D-4641-A199-D710AA0F2D6E}|MvpTracker\\MvpTracker.csproj|solutionrelative:mvptracker\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,6 +31,18 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Raul\\source\\repos\\MvpTracker\\MvpTracker\\Form1.cs",
+              "RelativeDocumentMoniker": "MvpTracker\\Form1.cs",
+              "ToolTip": "C:\\Users\\Raul\\source\\repos\\MvpTracker\\MvpTracker\\Form1.cs [Design]",
+              "RelativeToolTip": "MvpTracker\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T15:53:41.743Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Mvp.cs",
               "DocumentMoniker": "C:\\Users\\Raul\\source\\repos\\MvpTracker\\MvpTracker\\Mvp.cs",
               "RelativeDocumentMoniker": "MvpTracker\\Mvp.cs",
@@ -38,7 +50,8 @@
               "RelativeToolTip": "MvpTracker\\Mvp.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T03:17:34.235Z"
+              "WhenOpened": "2024-10-14T03:17:34.235Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -48,56 +61,23 @@
               "RelativeDocumentMoniker": "MvpTracker\\Form1.cs",
               "ToolTip": "C:\\Users\\Raul\\source\\repos\\MvpTracker\\MvpTracker\\Form1.cs",
               "RelativeToolTip": "MvpTracker\\Form1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAAALABAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-11T15:58:54.831Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Database.cs",
               "DocumentMoniker": "C:\\Users\\Raul\\source\\repos\\MvpTracker\\MvpTracker\\Database.cs",
               "RelativeDocumentMoniker": "MvpTracker\\Database.cs",
               "ToolTip": "C:\\Users\\Raul\\source\\repos\\MvpTracker\\MvpTracker\\Database.cs",
               "RelativeToolTip": "MvpTracker\\Database.cs",
-              "ViewState": "AgIAAK4AAAAAAAAAAAAcwMcAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAqwFcAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-12T19:55:23.758Z",
               "EditorCaption": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "1e2795ce-0000-4ec5-8356-e1221334d321",
-        "Display": 0,
-        "X": 218,
-        "Y": 105,
-        "Width": 1562,
-        "Height": 784,
-        "WindowState": 0
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Raul\\source\\repos\\MvpTracker\\MvpTracker\\Form1.cs",
-              "RelativeDocumentMoniker": "MvpTracker\\Form1.cs",
-              "ToolTip": "C:\\Users\\Raul\\source\\repos\\MvpTracker\\MvpTracker\\Form1.cs [Design]",
-              "RelativeToolTip": "MvpTracker\\Form1.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-11T15:53:41.743Z",
-              "EditorCaption": " [Design]"
             }
           ]
         }

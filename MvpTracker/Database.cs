@@ -1,15 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Data.Common;
 using System.Data.SqlClient;
 using System.Globalization;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace MvpTracker
 {
@@ -100,7 +94,7 @@ namespace MvpTracker
             {
                 foreach (var mvp in mvps)
                 {
-                    if (DateTime.Now > Convert.ToDateTime(mvp.RespawnDate)) // if MVP has spawned, update it to alive
+                    if (DateTime.Now > Convert.ToDateTime(mvp.RespawnDate))
                     {
                         updateQuery = $"UPDATE MvpTracking SET killed_time = NULL, next_respawn_time= NULL, is_mvp_dead = 0 ";
                         updateQuery += $"WHERE id = {mvp.Id}";
@@ -183,6 +177,7 @@ namespace MvpTracker
                     sqlQuery = "SELECT m.name, mt.id, mt.killed_time, mt.next_respawn_time FROM MvpTracking as mt ";
                     sqlQuery += "INNER JOIN Mvp as m on mt.id = m.id ";
                     sqlQuery += "WHERE is_mvp_dead = 1";
+                    sqlQuery += "ORDER BY next_respawn_time ASC";
                     command = new SqlCommand(sqlQuery, Conn);
                 }
                 else if (mvp_status == "alive")
@@ -209,7 +204,7 @@ namespace MvpTracker
                             Name = reader["name"].ToString(),
                             KilledTime = reader["killed_time"].ToString(),
                             RespawnDate = reader["next_respawn_time"].ToString(),
-                            buttonControl = null // THINK OF HOW TO LINK BUTTON HERE! perhaps use a function just to loop and link these controls ..
+                            buttonControl = null
                         });
                     }
                 }
@@ -223,7 +218,6 @@ namespace MvpTracker
             CloseSqlConnection();
             return mvpsKilled;
         }
-
 
     }
 }
