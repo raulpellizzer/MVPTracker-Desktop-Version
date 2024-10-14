@@ -104,6 +104,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="StatisticsForm.resx">
       <DependentUpon>StatisticsForm.cs</DependentUpon>
@@ -132,6 +133,81 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amon_ra.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amon_ra_menor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Baphomet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dark Lord.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Doppelganger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dracula.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Drake.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eddga.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Evil Snake Lord.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hatii.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GTB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scaraba Queen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stormy Knight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lord of Death.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Maya Purple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Maya.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mistress.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Moonlight Flower.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Orc Hero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Orc Lord.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Osiris.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pharaoh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Phreeoni.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Turtle General.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hela.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

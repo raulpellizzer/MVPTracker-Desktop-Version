@@ -35,6 +35,9 @@
             this.txtBoxNextRespawns = new System.Windows.Forms.TextBox();
             this.gpBoxMvp = new System.Windows.Forms.GroupBox();
             this.btnTest = new System.Windows.Forms.Button();
+            this.txtBoxPossiblyAlive = new System.Windows.Forms.TextBox();
+            this.mvpTimer = new System.Windows.Forms.Timer(this.components);
+            this.btnStatistics = new System.Windows.Forms.Button();
             this.btnTurtleGeneral = new System.Windows.Forms.Button();
             this.btnPhreeoni = new System.Windows.Forms.Button();
             this.btnPharaoh = new System.Windows.Forms.Button();
@@ -58,9 +61,6 @@
             this.btnDarkLord = new System.Windows.Forms.Button();
             this.btnBaphomet = new System.Windows.Forms.Button();
             this.btnDoppelganger = new System.Windows.Forms.Button();
-            this.txtBoxPossiblyAlive = new System.Windows.Forms.TextBox();
-            this.mvpTimer = new System.Windows.Forms.Timer(this.components);
-            this.btnStatistics = new System.Windows.Forms.Button();
             this.gpBoxMvp.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,7 +78,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(657, 79);
+            this.label2.Location = new System.Drawing.Point(740, 79);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(150, 24);
             this.label2.TabIndex = 1;
@@ -88,7 +88,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1006, 79);
+            this.label3.Location = new System.Drawing.Point(1061, 79);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(145, 24);
             this.label3.TabIndex = 2;
@@ -99,12 +99,12 @@
             this.txtBoxNextRespawns.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtBoxNextRespawns.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBoxNextRespawns.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxNextRespawns.Location = new System.Drawing.Point(661, 106);
+            this.txtBoxNextRespawns.Location = new System.Drawing.Point(744, 106);
             this.txtBoxNextRespawns.Multiline = true;
             this.txtBoxNextRespawns.Name = "txtBoxNextRespawns";
             this.txtBoxNextRespawns.ReadOnly = true;
             this.txtBoxNextRespawns.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtBoxNextRespawns.Size = new System.Drawing.Size(310, 420);
+            this.txtBoxNextRespawns.Size = new System.Drawing.Size(279, 420);
             this.txtBoxNextRespawns.TabIndex = 3;
             // 
             // gpBoxMvp
@@ -137,7 +137,7 @@
             this.gpBoxMvp.Location = new System.Drawing.Point(27, 79);
             this.gpBoxMvp.Name = "gpBoxMvp";
             this.gpBoxMvp.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.gpBoxMvp.Size = new System.Drawing.Size(574, 422);
+            this.gpBoxMvp.Size = new System.Drawing.Size(685, 407);
             this.gpBoxMvp.TabIndex = 5;
             this.gpBoxMvp.TabStop = false;
             this.gpBoxMvp.Text = "MVPs Killed";
@@ -145,7 +145,7 @@
             // btnTest
             // 
             this.btnTest.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTest.Location = new System.Drawing.Point(529, 393);
+            this.btnTest.Location = new System.Drawing.Point(640, 378);
             this.btnTest.Name = "btnTest";
             this.btnTest.Size = new System.Drawing.Size(39, 23);
             this.btnTest.TabIndex = 25;
@@ -153,247 +153,17 @@
             this.btnTest.UseVisualStyleBackColor = true;
             this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
-            // btnTurtleGeneral
-            // 
-            this.btnTurtleGeneral.Location = new System.Drawing.Point(390, 306);
-            this.btnTurtleGeneral.Name = "btnTurtleGeneral";
-            this.btnTurtleGeneral.Size = new System.Drawing.Size(162, 28);
-            this.btnTurtleGeneral.TabIndex = 24;
-            this.btnTurtleGeneral.Text = "Turtle General";
-            this.btnTurtleGeneral.UseVisualStyleBackColor = true;
-            this.btnTurtleGeneral.Click += new System.EventHandler(this.btnTurtleGeneral_Click);
-            // 
-            // btnPhreeoni
-            // 
-            this.btnPhreeoni.Location = new System.Drawing.Point(390, 262);
-            this.btnPhreeoni.Name = "btnPhreeoni";
-            this.btnPhreeoni.Size = new System.Drawing.Size(162, 28);
-            this.btnPhreeoni.TabIndex = 23;
-            this.btnPhreeoni.Text = "Phreeoni";
-            this.btnPhreeoni.UseVisualStyleBackColor = true;
-            this.btnPhreeoni.Click += new System.EventHandler(this.btnPhreeoni_Click);
-            // 
-            // btnPharaoh
-            // 
-            this.btnPharaoh.Location = new System.Drawing.Point(390, 215);
-            this.btnPharaoh.Name = "btnPharaoh";
-            this.btnPharaoh.Size = new System.Drawing.Size(162, 28);
-            this.btnPharaoh.TabIndex = 22;
-            this.btnPharaoh.Text = "Pharaoh";
-            this.btnPharaoh.UseVisualStyleBackColor = true;
-            this.btnPharaoh.Click += new System.EventHandler(this.btnPharaoh_Click);
-            // 
-            // btnOsiris
-            // 
-            this.btnOsiris.Location = new System.Drawing.Point(390, 171);
-            this.btnOsiris.Name = "btnOsiris";
-            this.btnOsiris.Size = new System.Drawing.Size(162, 28);
-            this.btnOsiris.TabIndex = 21;
-            this.btnOsiris.Text = "Osiris";
-            this.btnOsiris.UseVisualStyleBackColor = true;
-            this.btnOsiris.Click += new System.EventHandler(this.btnOsiris_Click);
-            // 
-            // btnOrcLord
-            // 
-            this.btnOrcLord.Location = new System.Drawing.Point(390, 126);
-            this.btnOrcLord.Name = "btnOrcLord";
-            this.btnOrcLord.Size = new System.Drawing.Size(162, 28);
-            this.btnOrcLord.TabIndex = 20;
-            this.btnOrcLord.Text = "Orc Lord";
-            this.btnOrcLord.UseVisualStyleBackColor = true;
-            this.btnOrcLord.Click += new System.EventHandler(this.btnOrcLord_Click);
-            // 
-            // btnOrcHero
-            // 
-            this.btnOrcHero.Location = new System.Drawing.Point(390, 82);
-            this.btnOrcHero.Name = "btnOrcHero";
-            this.btnOrcHero.Size = new System.Drawing.Size(162, 28);
-            this.btnOrcHero.TabIndex = 19;
-            this.btnOrcHero.Text = "Orc Hero";
-            this.btnOrcHero.UseVisualStyleBackColor = true;
-            this.btnOrcHero.Click += new System.EventHandler(this.btnOrcHero_Click);
-            // 
-            // btnMoonlightFlower
-            // 
-            this.btnMoonlightFlower.Location = new System.Drawing.Point(390, 33);
-            this.btnMoonlightFlower.Name = "btnMoonlightFlower";
-            this.btnMoonlightFlower.Size = new System.Drawing.Size(162, 28);
-            this.btnMoonlightFlower.TabIndex = 18;
-            this.btnMoonlightFlower.Text = "Moonlight Flower";
-            this.btnMoonlightFlower.UseVisualStyleBackColor = true;
-            this.btnMoonlightFlower.Click += new System.EventHandler(this.btnMoonlightFlower_Click);
-            // 
-            // btnMistress
-            // 
-            this.btnMistress.Location = new System.Drawing.Point(208, 350);
-            this.btnMistress.Name = "btnMistress";
-            this.btnMistress.Size = new System.Drawing.Size(162, 28);
-            this.btnMistress.TabIndex = 17;
-            this.btnMistress.Text = "Mistress";
-            this.btnMistress.UseVisualStyleBackColor = true;
-            this.btnMistress.Click += new System.EventHandler(this.btnMistress_Click);
-            // 
-            // btnMaya
-            // 
-            this.btnMaya.Location = new System.Drawing.Point(208, 306);
-            this.btnMaya.Name = "btnMaya";
-            this.btnMaya.Size = new System.Drawing.Size(162, 28);
-            this.btnMaya.TabIndex = 16;
-            this.btnMaya.Text = "Maya";
-            this.btnMaya.UseVisualStyleBackColor = true;
-            this.btnMaya.Click += new System.EventHandler(this.btnMaya_Click);
-            // 
-            // btnMayaPurple
-            // 
-            this.btnMayaPurple.Location = new System.Drawing.Point(208, 262);
-            this.btnMayaPurple.Name = "btnMayaPurple";
-            this.btnMayaPurple.Size = new System.Drawing.Size(162, 28);
-            this.btnMayaPurple.TabIndex = 15;
-            this.btnMayaPurple.Text = "Maya Purple";
-            this.btnMayaPurple.UseVisualStyleBackColor = true;
-            this.btnMayaPurple.Click += new System.EventHandler(this.btnMayaPurple_Click);
-            // 
-            // btnLordOfDeath
-            // 
-            this.btnLordOfDeath.Location = new System.Drawing.Point(208, 215);
-            this.btnLordOfDeath.Name = "btnLordOfDeath";
-            this.btnLordOfDeath.Size = new System.Drawing.Size(162, 28);
-            this.btnLordOfDeath.TabIndex = 14;
-            this.btnLordOfDeath.Text = "Lord of Death";
-            this.btnLordOfDeath.UseVisualStyleBackColor = true;
-            this.btnLordOfDeath.Click += new System.EventHandler(this.btnLordOfDeath_Click);
-            // 
-            // btnStormyKnight
-            // 
-            this.btnStormyKnight.Location = new System.Drawing.Point(208, 171);
-            this.btnStormyKnight.Name = "btnStormyKnight";
-            this.btnStormyKnight.Size = new System.Drawing.Size(162, 28);
-            this.btnStormyKnight.TabIndex = 13;
-            this.btnStormyKnight.Text = "Stormy Knight";
-            this.btnStormyKnight.UseVisualStyleBackColor = true;
-            this.btnStormyKnight.Click += new System.EventHandler(this.btnStormyKnight_Click);
-            // 
-            // btnScaraba
-            // 
-            this.btnScaraba.Location = new System.Drawing.Point(208, 126);
-            this.btnScaraba.Name = "btnScaraba";
-            this.btnScaraba.Size = new System.Drawing.Size(162, 28);
-            this.btnScaraba.TabIndex = 12;
-            this.btnScaraba.Text = "Scaraba Queen";
-            this.btnScaraba.UseVisualStyleBackColor = true;
-            this.btnScaraba.Click += new System.EventHandler(this.btnScaraba_Click);
-            // 
-            // btnHela
-            // 
-            this.btnHela.Location = new System.Drawing.Point(208, 82);
-            this.btnHela.Name = "btnHela";
-            this.btnHela.Size = new System.Drawing.Size(162, 28);
-            this.btnHela.TabIndex = 11;
-            this.btnHela.Text = "Hela";
-            this.btnHela.UseVisualStyleBackColor = true;
-            this.btnHela.Click += new System.EventHandler(this.btnHela_Click);
-            // 
-            // btnGTB
-            // 
-            this.btnGTB.Location = new System.Drawing.Point(208, 33);
-            this.btnGTB.Name = "btnGTB";
-            this.btnGTB.Size = new System.Drawing.Size(162, 28);
-            this.btnGTB.TabIndex = 10;
-            this.btnGTB.Text = "Golden Thief Bug";
-            this.btnGTB.UseVisualStyleBackColor = true;
-            this.btnGTB.Click += new System.EventHandler(this.btnGTB_Click);
-            // 
-            // btnHatii
-            // 
-            this.btnHatii.Location = new System.Drawing.Point(22, 350);
-            this.btnHatii.Name = "btnHatii";
-            this.btnHatii.Size = new System.Drawing.Size(162, 28);
-            this.btnHatii.TabIndex = 9;
-            this.btnHatii.Text = "Hatii";
-            this.btnHatii.UseVisualStyleBackColor = true;
-            this.btnHatii.Click += new System.EventHandler(this.btnHatii_Click);
-            // 
-            // btnEvilSnakeLord
-            // 
-            this.btnEvilSnakeLord.Location = new System.Drawing.Point(22, 306);
-            this.btnEvilSnakeLord.Name = "btnEvilSnakeLord";
-            this.btnEvilSnakeLord.Size = new System.Drawing.Size(162, 28);
-            this.btnEvilSnakeLord.TabIndex = 8;
-            this.btnEvilSnakeLord.Text = "Evil Snake Lord";
-            this.btnEvilSnakeLord.UseVisualStyleBackColor = true;
-            this.btnEvilSnakeLord.Click += new System.EventHandler(this.btnEvilSnakeLord_Click);
-            // 
-            // btnEddga
-            // 
-            this.btnEddga.Location = new System.Drawing.Point(22, 262);
-            this.btnEddga.Name = "btnEddga";
-            this.btnEddga.Size = new System.Drawing.Size(162, 28);
-            this.btnEddga.TabIndex = 7;
-            this.btnEddga.Text = "Eddga";
-            this.btnEddga.UseVisualStyleBackColor = true;
-            this.btnEddga.Click += new System.EventHandler(this.btnEddga_Click);
-            // 
-            // btnDrake
-            // 
-            this.btnDrake.Location = new System.Drawing.Point(22, 215);
-            this.btnDrake.Name = "btnDrake";
-            this.btnDrake.Size = new System.Drawing.Size(162, 28);
-            this.btnDrake.TabIndex = 6;
-            this.btnDrake.Text = "Drake";
-            this.btnDrake.UseVisualStyleBackColor = true;
-            this.btnDrake.Click += new System.EventHandler(this.btnDrake_Click);
-            // 
-            // btnDracula
-            // 
-            this.btnDracula.Location = new System.Drawing.Point(22, 171);
-            this.btnDracula.Name = "btnDracula";
-            this.btnDracula.Size = new System.Drawing.Size(162, 28);
-            this.btnDracula.TabIndex = 5;
-            this.btnDracula.Text = "Dracula";
-            this.btnDracula.UseVisualStyleBackColor = true;
-            this.btnDracula.Click += new System.EventHandler(this.btnDracula_Click);
-            // 
-            // btnDarkLord
-            // 
-            this.btnDarkLord.Location = new System.Drawing.Point(22, 82);
-            this.btnDarkLord.Name = "btnDarkLord";
-            this.btnDarkLord.Size = new System.Drawing.Size(162, 28);
-            this.btnDarkLord.TabIndex = 4;
-            this.btnDarkLord.Text = "Dark Lord";
-            this.btnDarkLord.UseVisualStyleBackColor = true;
-            this.btnDarkLord.Click += new System.EventHandler(this.btnDarkLord_Click);
-            // 
-            // btnBaphomet
-            // 
-            this.btnBaphomet.Location = new System.Drawing.Point(22, 33);
-            this.btnBaphomet.Name = "btnBaphomet";
-            this.btnBaphomet.Size = new System.Drawing.Size(162, 28);
-            this.btnBaphomet.TabIndex = 3;
-            this.btnBaphomet.Text = "Baphomet";
-            this.btnBaphomet.UseVisualStyleBackColor = true;
-            this.btnBaphomet.Click += new System.EventHandler(this.btnBaphomet_Click);
-            // 
-            // btnDoppelganger
-            // 
-            this.btnDoppelganger.Location = new System.Drawing.Point(22, 126);
-            this.btnDoppelganger.Name = "btnDoppelganger";
-            this.btnDoppelganger.Size = new System.Drawing.Size(162, 28);
-            this.btnDoppelganger.TabIndex = 2;
-            this.btnDoppelganger.Text = "Doppelganger";
-            this.btnDoppelganger.UseVisualStyleBackColor = true;
-            this.btnDoppelganger.Click += new System.EventHandler(this.btnDoppelganger_Click);
-            // 
             // txtBoxPossiblyAlive
             // 
             this.txtBoxPossiblyAlive.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtBoxPossiblyAlive.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBoxPossiblyAlive.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxPossiblyAlive.Location = new System.Drawing.Point(1010, 106);
+            this.txtBoxPossiblyAlive.Location = new System.Drawing.Point(1065, 106);
             this.txtBoxPossiblyAlive.Multiline = true;
             this.txtBoxPossiblyAlive.Name = "txtBoxPossiblyAlive";
             this.txtBoxPossiblyAlive.ReadOnly = true;
             this.txtBoxPossiblyAlive.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtBoxPossiblyAlive.Size = new System.Drawing.Size(310, 420);
+            this.txtBoxPossiblyAlive.Size = new System.Drawing.Size(279, 420);
             this.txtBoxPossiblyAlive.TabIndex = 6;
             // 
             // mvpTimer
@@ -405,7 +175,7 @@
             // btnStatistics
             // 
             this.btnStatistics.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStatistics.Location = new System.Drawing.Point(27, 519);
+            this.btnStatistics.Location = new System.Drawing.Point(27, 498);
             this.btnStatistics.Name = "btnStatistics";
             this.btnStatistics.Size = new System.Drawing.Size(162, 28);
             this.btnStatistics.TabIndex = 26;
@@ -413,11 +183,287 @@
             this.btnStatistics.UseVisualStyleBackColor = true;
             this.btnStatistics.Click += new System.EventHandler(this.btnStatistics_Click);
             // 
+            // btnTurtleGeneral
+            // 
+            this.btnTurtleGeneral.Image = global::MvpTracker.Properties.Resources.Turtle_General;
+            this.btnTurtleGeneral.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTurtleGeneral.Location = new System.Drawing.Point(461, 306);
+            this.btnTurtleGeneral.Name = "btnTurtleGeneral";
+            this.btnTurtleGeneral.Size = new System.Drawing.Size(192, 28);
+            this.btnTurtleGeneral.TabIndex = 24;
+            this.btnTurtleGeneral.Text = "Turtle General";
+            this.btnTurtleGeneral.UseVisualStyleBackColor = true;
+            this.btnTurtleGeneral.Click += new System.EventHandler(this.btnTurtleGeneral_Click);
+            // 
+            // btnPhreeoni
+            // 
+            this.btnPhreeoni.Image = global::MvpTracker.Properties.Resources.Phreeoni;
+            this.btnPhreeoni.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPhreeoni.Location = new System.Drawing.Point(461, 262);
+            this.btnPhreeoni.Name = "btnPhreeoni";
+            this.btnPhreeoni.Size = new System.Drawing.Size(192, 28);
+            this.btnPhreeoni.TabIndex = 23;
+            this.btnPhreeoni.Text = "Phreeoni";
+            this.btnPhreeoni.UseVisualStyleBackColor = true;
+            this.btnPhreeoni.Click += new System.EventHandler(this.btnPhreeoni_Click);
+            // 
+            // btnPharaoh
+            // 
+            this.btnPharaoh.Image = global::MvpTracker.Properties.Resources.Pharaoh;
+            this.btnPharaoh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPharaoh.Location = new System.Drawing.Point(461, 215);
+            this.btnPharaoh.Name = "btnPharaoh";
+            this.btnPharaoh.Size = new System.Drawing.Size(192, 28);
+            this.btnPharaoh.TabIndex = 22;
+            this.btnPharaoh.Text = "Pharaoh";
+            this.btnPharaoh.UseVisualStyleBackColor = true;
+            this.btnPharaoh.Click += new System.EventHandler(this.btnPharaoh_Click);
+            // 
+            // btnOsiris
+            // 
+            this.btnOsiris.Image = global::MvpTracker.Properties.Resources.Osiris;
+            this.btnOsiris.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOsiris.Location = new System.Drawing.Point(461, 171);
+            this.btnOsiris.Name = "btnOsiris";
+            this.btnOsiris.Size = new System.Drawing.Size(192, 28);
+            this.btnOsiris.TabIndex = 21;
+            this.btnOsiris.Text = "Osiris";
+            this.btnOsiris.UseVisualStyleBackColor = true;
+            this.btnOsiris.Click += new System.EventHandler(this.btnOsiris_Click);
+            // 
+            // btnOrcLord
+            // 
+            this.btnOrcLord.Image = global::MvpTracker.Properties.Resources.Orc_Lord;
+            this.btnOrcLord.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOrcLord.Location = new System.Drawing.Point(461, 126);
+            this.btnOrcLord.Name = "btnOrcLord";
+            this.btnOrcLord.Size = new System.Drawing.Size(192, 28);
+            this.btnOrcLord.TabIndex = 20;
+            this.btnOrcLord.Text = "Orc Lord";
+            this.btnOrcLord.UseVisualStyleBackColor = true;
+            this.btnOrcLord.Click += new System.EventHandler(this.btnOrcLord_Click);
+            // 
+            // btnOrcHero
+            // 
+            this.btnOrcHero.Image = global::MvpTracker.Properties.Resources.Orc_Hero;
+            this.btnOrcHero.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOrcHero.Location = new System.Drawing.Point(461, 82);
+            this.btnOrcHero.Name = "btnOrcHero";
+            this.btnOrcHero.Size = new System.Drawing.Size(192, 28);
+            this.btnOrcHero.TabIndex = 19;
+            this.btnOrcHero.Text = "Orc Hero";
+            this.btnOrcHero.UseVisualStyleBackColor = true;
+            this.btnOrcHero.Click += new System.EventHandler(this.btnOrcHero_Click);
+            // 
+            // btnMoonlightFlower
+            // 
+            this.btnMoonlightFlower.Image = global::MvpTracker.Properties.Resources.Moonlight_Flower;
+            this.btnMoonlightFlower.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMoonlightFlower.Location = new System.Drawing.Point(461, 33);
+            this.btnMoonlightFlower.Name = "btnMoonlightFlower";
+            this.btnMoonlightFlower.Size = new System.Drawing.Size(192, 28);
+            this.btnMoonlightFlower.TabIndex = 18;
+            this.btnMoonlightFlower.Text = "Moonlight Flower";
+            this.btnMoonlightFlower.UseVisualStyleBackColor = true;
+            this.btnMoonlightFlower.Click += new System.EventHandler(this.btnMoonlightFlower_Click);
+            // 
+            // btnMistress
+            // 
+            this.btnMistress.Image = global::MvpTracker.Properties.Resources.Mistress;
+            this.btnMistress.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMistress.Location = new System.Drawing.Point(241, 350);
+            this.btnMistress.Name = "btnMistress";
+            this.btnMistress.Size = new System.Drawing.Size(192, 28);
+            this.btnMistress.TabIndex = 17;
+            this.btnMistress.Text = "Mistress";
+            this.btnMistress.UseVisualStyleBackColor = true;
+            this.btnMistress.Click += new System.EventHandler(this.btnMistress_Click);
+            // 
+            // btnMaya
+            // 
+            this.btnMaya.Image = global::MvpTracker.Properties.Resources.Maya;
+            this.btnMaya.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMaya.Location = new System.Drawing.Point(241, 306);
+            this.btnMaya.Name = "btnMaya";
+            this.btnMaya.Size = new System.Drawing.Size(192, 28);
+            this.btnMaya.TabIndex = 16;
+            this.btnMaya.Text = "Maya";
+            this.btnMaya.UseVisualStyleBackColor = true;
+            this.btnMaya.Click += new System.EventHandler(this.btnMaya_Click);
+            // 
+            // btnMayaPurple
+            // 
+            this.btnMayaPurple.Image = global::MvpTracker.Properties.Resources.Maya_Purple;
+            this.btnMayaPurple.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMayaPurple.Location = new System.Drawing.Point(241, 262);
+            this.btnMayaPurple.Name = "btnMayaPurple";
+            this.btnMayaPurple.Size = new System.Drawing.Size(192, 28);
+            this.btnMayaPurple.TabIndex = 15;
+            this.btnMayaPurple.Text = "Maya Purple";
+            this.btnMayaPurple.UseVisualStyleBackColor = true;
+            this.btnMayaPurple.Click += new System.EventHandler(this.btnMayaPurple_Click);
+            // 
+            // btnLordOfDeath
+            // 
+            this.btnLordOfDeath.Image = global::MvpTracker.Properties.Resources.Lord_of_Death;
+            this.btnLordOfDeath.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLordOfDeath.Location = new System.Drawing.Point(241, 215);
+            this.btnLordOfDeath.Name = "btnLordOfDeath";
+            this.btnLordOfDeath.Size = new System.Drawing.Size(192, 28);
+            this.btnLordOfDeath.TabIndex = 14;
+            this.btnLordOfDeath.Text = "Lord of Death";
+            this.btnLordOfDeath.UseVisualStyleBackColor = true;
+            this.btnLordOfDeath.Click += new System.EventHandler(this.btnLordOfDeath_Click);
+            // 
+            // btnStormyKnight
+            // 
+            this.btnStormyKnight.Image = global::MvpTracker.Properties.Resources.Stormy_Knight;
+            this.btnStormyKnight.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStormyKnight.Location = new System.Drawing.Point(241, 171);
+            this.btnStormyKnight.Name = "btnStormyKnight";
+            this.btnStormyKnight.Size = new System.Drawing.Size(192, 28);
+            this.btnStormyKnight.TabIndex = 13;
+            this.btnStormyKnight.Text = "Stormy Knight";
+            this.btnStormyKnight.UseVisualStyleBackColor = true;
+            this.btnStormyKnight.Click += new System.EventHandler(this.btnStormyKnight_Click);
+            // 
+            // btnScaraba
+            // 
+            this.btnScaraba.Image = global::MvpTracker.Properties.Resources.Scaraba_Queen;
+            this.btnScaraba.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnScaraba.Location = new System.Drawing.Point(241, 126);
+            this.btnScaraba.Name = "btnScaraba";
+            this.btnScaraba.Size = new System.Drawing.Size(192, 28);
+            this.btnScaraba.TabIndex = 12;
+            this.btnScaraba.Text = "Scaraba Queen";
+            this.btnScaraba.UseVisualStyleBackColor = true;
+            this.btnScaraba.Click += new System.EventHandler(this.btnScaraba_Click);
+            // 
+            // btnHela
+            // 
+            this.btnHela.Image = global::MvpTracker.Properties.Resources.Hela;
+            this.btnHela.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHela.Location = new System.Drawing.Point(241, 82);
+            this.btnHela.Name = "btnHela";
+            this.btnHela.Size = new System.Drawing.Size(192, 28);
+            this.btnHela.TabIndex = 11;
+            this.btnHela.Text = "Hela";
+            this.btnHela.UseVisualStyleBackColor = true;
+            this.btnHela.Click += new System.EventHandler(this.btnHela_Click);
+            // 
+            // btnGTB
+            // 
+            this.btnGTB.Image = global::MvpTracker.Properties.Resources.GTB;
+            this.btnGTB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGTB.Location = new System.Drawing.Point(241, 33);
+            this.btnGTB.Name = "btnGTB";
+            this.btnGTB.Size = new System.Drawing.Size(192, 28);
+            this.btnGTB.TabIndex = 10;
+            this.btnGTB.Text = "Golden Thief Bug";
+            this.btnGTB.UseVisualStyleBackColor = true;
+            this.btnGTB.Click += new System.EventHandler(this.btnGTB_Click);
+            // 
+            // btnHatii
+            // 
+            this.btnHatii.Image = global::MvpTracker.Properties.Resources.Hatii;
+            this.btnHatii.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHatii.Location = new System.Drawing.Point(22, 350);
+            this.btnHatii.Name = "btnHatii";
+            this.btnHatii.Size = new System.Drawing.Size(192, 28);
+            this.btnHatii.TabIndex = 9;
+            this.btnHatii.Text = "Hatii";
+            this.btnHatii.UseVisualStyleBackColor = true;
+            this.btnHatii.Click += new System.EventHandler(this.btnHatii_Click);
+            // 
+            // btnEvilSnakeLord
+            // 
+            this.btnEvilSnakeLord.Image = global::MvpTracker.Properties.Resources.Evil_Snake_Lord;
+            this.btnEvilSnakeLord.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEvilSnakeLord.Location = new System.Drawing.Point(22, 306);
+            this.btnEvilSnakeLord.Name = "btnEvilSnakeLord";
+            this.btnEvilSnakeLord.Size = new System.Drawing.Size(192, 28);
+            this.btnEvilSnakeLord.TabIndex = 8;
+            this.btnEvilSnakeLord.Text = "Evil Snake Lord";
+            this.btnEvilSnakeLord.UseVisualStyleBackColor = true;
+            this.btnEvilSnakeLord.Click += new System.EventHandler(this.btnEvilSnakeLord_Click);
+            // 
+            // btnEddga
+            // 
+            this.btnEddga.Image = global::MvpTracker.Properties.Resources.Eddga;
+            this.btnEddga.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEddga.Location = new System.Drawing.Point(22, 262);
+            this.btnEddga.Name = "btnEddga";
+            this.btnEddga.Size = new System.Drawing.Size(192, 28);
+            this.btnEddga.TabIndex = 7;
+            this.btnEddga.Text = "Eddga";
+            this.btnEddga.UseVisualStyleBackColor = true;
+            this.btnEddga.Click += new System.EventHandler(this.btnEddga_Click);
+            // 
+            // btnDrake
+            // 
+            this.btnDrake.Image = global::MvpTracker.Properties.Resources.Drake;
+            this.btnDrake.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDrake.Location = new System.Drawing.Point(22, 215);
+            this.btnDrake.Name = "btnDrake";
+            this.btnDrake.Size = new System.Drawing.Size(192, 28);
+            this.btnDrake.TabIndex = 6;
+            this.btnDrake.Text = "Drake";
+            this.btnDrake.UseVisualStyleBackColor = true;
+            this.btnDrake.Click += new System.EventHandler(this.btnDrake_Click);
+            // 
+            // btnDracula
+            // 
+            this.btnDracula.Image = global::MvpTracker.Properties.Resources.Dracula;
+            this.btnDracula.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDracula.Location = new System.Drawing.Point(22, 171);
+            this.btnDracula.Name = "btnDracula";
+            this.btnDracula.Size = new System.Drawing.Size(192, 28);
+            this.btnDracula.TabIndex = 5;
+            this.btnDracula.Text = "Dracula";
+            this.btnDracula.UseVisualStyleBackColor = true;
+            this.btnDracula.Click += new System.EventHandler(this.btnDracula_Click);
+            // 
+            // btnDarkLord
+            // 
+            this.btnDarkLord.Image = global::MvpTracker.Properties.Resources.Dark_Lord;
+            this.btnDarkLord.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDarkLord.Location = new System.Drawing.Point(22, 82);
+            this.btnDarkLord.Name = "btnDarkLord";
+            this.btnDarkLord.Size = new System.Drawing.Size(192, 28);
+            this.btnDarkLord.TabIndex = 4;
+            this.btnDarkLord.Text = "Dark Lord";
+            this.btnDarkLord.UseVisualStyleBackColor = true;
+            this.btnDarkLord.Click += new System.EventHandler(this.btnDarkLord_Click);
+            // 
+            // btnBaphomet
+            // 
+            this.btnBaphomet.Image = global::MvpTracker.Properties.Resources.Baphomet;
+            this.btnBaphomet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBaphomet.Location = new System.Drawing.Point(22, 33);
+            this.btnBaphomet.Name = "btnBaphomet";
+            this.btnBaphomet.Size = new System.Drawing.Size(192, 28);
+            this.btnBaphomet.TabIndex = 3;
+            this.btnBaphomet.Text = "Baphomet";
+            this.btnBaphomet.UseVisualStyleBackColor = true;
+            this.btnBaphomet.Click += new System.EventHandler(this.btnBaphomet_Click);
+            // 
+            // btnDoppelganger
+            // 
+            this.btnDoppelganger.Image = global::MvpTracker.Properties.Resources.Doppelganger;
+            this.btnDoppelganger.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDoppelganger.Location = new System.Drawing.Point(22, 126);
+            this.btnDoppelganger.Name = "btnDoppelganger";
+            this.btnDoppelganger.Size = new System.Drawing.Size(192, 28);
+            this.btnDoppelganger.TabIndex = 2;
+            this.btnDoppelganger.Text = "Doppelganger";
+            this.btnDoppelganger.UseVisualStyleBackColor = true;
+            this.btnDoppelganger.Click += new System.EventHandler(this.btnDoppelganger_Click);
+            // 
             // mvpTrackerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1347, 567);
+            this.ClientSize = new System.Drawing.Size(1385, 567);
             this.Controls.Add(this.btnStatistics);
             this.Controls.Add(this.txtBoxPossiblyAlive);
             this.Controls.Add(this.gpBoxMvp);

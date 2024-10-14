@@ -226,7 +226,7 @@ namespace MvpTracker
             string sqlQuery;
             try
             {
-                sqlQuery = "SELECT Mvp.name, MvpTracking.killed_count  ";
+                sqlQuery = "SELECT Mvp.name as Name, MvpTracking.killed_count as Total  ";
                 sqlQuery += "FROM MvpTracking  ";
                 sqlQuery += "INNER JOIN Mvp ON MvpTracking.id = Mvp.id ";
                 sqlQuery += "ORDER BY killed_count desc";
