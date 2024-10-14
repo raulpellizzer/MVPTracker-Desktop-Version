@@ -25,8 +25,9 @@ namespace MvpTracker
  
             statisticsGridView.ReadOnly = true;
             statisticsGridView.DataSource = dataSet.Tables[0];
-            //statisticsGridView.AutoSize = true;
-
+            statisticsGridView.BorderStyle = BorderStyle.Fixed3D;
+            statisticsGridView.GridColor = Color.Black;
+            statisticsGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Raised;
         }
     }
 }
