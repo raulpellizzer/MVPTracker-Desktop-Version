@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 /*
- * To-do: -
+ * To-do: - Replicate new behavior of button clicks to other buttons (currently only implemented to Baphomet).
  * 
  * 
  * 
@@ -58,14 +58,114 @@ namespace MvpTracker
             {
                 txtBoxPossiblyAlive.AppendText(mvp.Name);
                 txtBoxPossiblyAlive.AppendText(Environment.NewLine);
-
-                // Big if would be here, one per monster / MVP, not good.. 
-                if (mvp.Name == "Baphomet")
-                    btnBaphomet.Enabled = true;
-
-
+                EnableButtonControl(mvp.Name);
             }
         }
+
+        /*
+         * Enable button when MVP spawns
+         * 
+         */
+        public void EnableButtonControl(string mvpName)
+        {
+            switch (mvpName)
+            {
+                case "Baphomet":
+                    btnBaphomet.Enabled = true;
+                    break;
+
+                case "Dark Lord":
+                    btnDarkLord.Enabled = true;
+                    break;
+
+                case "Doppelganger":
+                    btnDoppelganger.Enabled = true;
+                    break;
+
+                case "Dracula":
+                    btnDracula.Enabled = true;
+                    break;
+
+                case "Drake":
+                    btnDrake.Enabled = true;
+                    break;
+
+                case "Eddga":
+                    btnEddga.Enabled = true;
+                    break;
+
+                case "Evil Snake Lord":
+                    btnEvilSnakeLord.Enabled = true;
+                    break;
+
+                case "Hatii":
+                    btnHatii.Enabled = true;
+                    break;
+
+                case "Golden Thief Bug":
+                    btnGTB.Enabled = true;
+                    break;
+
+                case "Hela":
+                    btnHela.Enabled = true;
+                    break;
+
+                case "Scaraba Queen":
+                    btnScaraba.Enabled = true;
+                    break;
+
+                case "Stormy Knight":
+                    btnStormyKnight.Enabled = true;
+                    break;
+
+                case "Lord of Death":
+                    btnLordOfDeath.Enabled = true;
+                    break;
+
+                case "Maya Purple":
+                    btnMayaPurple.Enabled = true;
+                    break;
+
+                case "Maya":
+                    btnMaya.Enabled = true;
+                    break;
+
+                case "Mistress":
+                    btnMistress.Enabled = true;
+                    break;
+
+                case "Moonlight Flower":
+                    btnMoonlightFlower.Enabled = true;
+                    break;
+
+                case "Orc Hero":
+                    btnOrcHero.Enabled = true;
+                    break;
+
+                case "Orc Lord":
+                    btnOrcLord.Enabled = true;
+                    break;
+
+                case "Osiris":
+                    btnOsiris.Enabled = true;
+                    break;
+
+                case "Pharaoh":
+                    btnPharaoh.Enabled = true;
+                    break;
+
+                case "Phreeoni":
+                    btnPhreeoni.Enabled = true;
+                    break;
+
+                case "Turtle General":
+                    btnTurtleGeneral.Enabled = true;
+                    break;
+
+                default:
+                    break;
+            }
+        } 
 
         /*
          * Returns next respanw time, for RagnaClassic one hour from now
@@ -385,8 +485,6 @@ namespace MvpTracker
         {
             mvpsKilled = db.GetMvpList("dead");
             db.RegisterMvpAsAlive(mvpsKilled, CultureInfo);
-            mvpsKilled = db.GetMvpList("dead");
-            //UpdateTextBox(mvpsKilled, "nextrespawn");
             UpdateTextBox();
         }
 

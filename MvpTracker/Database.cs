@@ -192,6 +192,12 @@ namespace MvpTracker
                     sqlQuery += "WHERE is_mvp_dead = 0";
                     command = new SqlCommand(sqlQuery, Conn);
                 }
+                else if (mvp_status == "all")
+                {
+                    sqlQuery = "SELECT m.name, mt.id, mt.killed_time, mt.next_respawn_time FROM MvpTracking as mt ";
+                    sqlQuery += "INNER JOIN Mvp as m on mt.id = m.id";
+                    command = new SqlCommand(sqlQuery, Conn);
+                }
 
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
