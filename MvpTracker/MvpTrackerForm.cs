@@ -1,19 +1,11 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
-using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 /*
- * To-do: - Fix ordering of Next Respawns
+ * To-do's: - 
  * 
  * 
  * 
@@ -52,6 +44,7 @@ namespace MvpTracker
             {
                 txtBoxNextRespawns.AppendText(mvp.Name + " - " + mvp.RespawnDate);
                 txtBoxNextRespawns.AppendText(Environment.NewLine);
+                DisableButtonControl(mvp.Name);
             }
 
             txtBoxPossiblyAlive.Clear();
@@ -60,6 +53,111 @@ namespace MvpTracker
                 txtBoxPossiblyAlive.AppendText(mvp.Name);
                 txtBoxPossiblyAlive.AppendText(Environment.NewLine);
                 EnableButtonControl(mvp.Name);
+            }
+        }
+
+        /*
+         * Disables button when MVP is dead
+         * 
+         */
+        public void DisableButtonControl(string mvpName)
+        {
+            switch (mvpName)
+            {
+                case "Baphomet":
+                    btnBaphomet.Enabled = false;
+                    break;
+
+                case "Dark Lord":
+                    btnDarkLord.Enabled = false;
+                    break;
+
+                case "Doppelganger":
+                    btnDoppelganger.Enabled = false;
+                    break;
+
+                case "Dracula":
+                    btnDracula.Enabled = false;
+                    break;
+
+                case "Drake":
+                    btnDrake.Enabled = false;
+                    break;
+
+                case "Eddga":
+                    btnEddga.Enabled = false;
+                    break;
+
+                case "Evil Snake Lord":
+                    btnEvilSnakeLord.Enabled = false;
+                    break;
+
+                case "Hatii":
+                    btnHatii.Enabled = false;
+                    break;
+
+                case "Golden Thief Bug":
+                    btnGTB.Enabled = false;
+                    break;
+
+                case "Hela":
+                    btnHela.Enabled = false;
+                    break;
+
+                case "Scaraba Queen":
+                    btnScaraba.Enabled = false;
+                    break;
+
+                case "Stormy Knight":
+                    btnStormyKnight.Enabled = false;
+                    break;
+
+                case "Lord of Death":
+                    btnLordOfDeath.Enabled = false;
+                    break;
+
+                case "Maya Purple":
+                    btnMayaPurple.Enabled = false;
+                    break;
+
+                case "Maya":
+                    btnMaya.Enabled = false;
+                    break;
+
+                case "Mistress":
+                    btnMistress.Enabled = false;
+                    break;
+
+                case "Moonlight Flower":
+                    btnMoonlightFlower.Enabled = false;
+                    break;
+
+                case "Orc Hero":
+                    btnOrcHero.Enabled = false;
+                    break;
+
+                case "Orc Lord":
+                    btnOrcLord.Enabled = false;
+                    break;
+
+                case "Osiris":
+                    btnOsiris.Enabled = false;
+                    break;
+
+                case "Pharaoh":
+                    btnPharaoh.Enabled = false;
+                    break;
+
+                case "Phreeoni":
+                    btnPhreeoni.Enabled = false;
+                    break;
+
+                case "Turtle General":
+                    btnTurtleGeneral.Enabled = false;
+                    break;
+
+                default:
+                    break;
             }
         }
 
@@ -196,207 +294,207 @@ namespace MvpTracker
 
         private void btnBaphomet_Click(object sender, EventArgs e)
         {
-            btnBaphomet.Enabled = false;
             string nextRespawn = GetNextRespawnTime();
             Mvp mvp = InstantiateMvpObject(btnBaphomet.Text, btnBaphomet, nextRespawn);
+            DisableButtonControl(mvp.Name);
             db.RegisterMvpAsKilled(mvp);
             UpdateTextBox();
         }
 
         private void btnDarkLord_Click(object sender, EventArgs e)
         {
-            btnDarkLord.Enabled = false;
             string nextRespawn = GetNextRespawnTime();
             Mvp mvp = InstantiateMvpObject(btnDarkLord.Text, btnDarkLord, nextRespawn);
+            DisableButtonControl(mvp.Name);
             db.RegisterMvpAsKilled(mvp);
             UpdateTextBox();
         }
 
         private void btnDoppelganger_Click(object sender, EventArgs e)
         {
-            btnDoppelganger.Enabled = false;
             string nextRespawn = GetNextRespawnTime();
             Mvp mvp = InstantiateMvpObject(btnDoppelganger.Text, btnDoppelganger, nextRespawn);
+            DisableButtonControl(mvp.Name);
             db.RegisterMvpAsKilled(mvp);
             UpdateTextBox();
         }
 
         private void btnDracula_Click(object sender, EventArgs e)
         {
-            btnDracula.Enabled = false;
             string nextRespawn = GetNextRespawnTime();
             Mvp mvp = InstantiateMvpObject(btnDracula.Text, btnDracula, nextRespawn);
+            DisableButtonControl(mvp.Name);
             db.RegisterMvpAsKilled(mvp);
             UpdateTextBox();
         }
 
         private void btnDrake_Click(object sender, EventArgs e)
         {
-            btnDrake.Enabled = false;
             string nextRespawn = GetNextRespawnTime();
             Mvp mvp = InstantiateMvpObject(btnDrake.Text, btnDrake, nextRespawn);
+            DisableButtonControl(mvp.Name);
             db.RegisterMvpAsKilled(mvp);
             UpdateTextBox();
         }
 
         private void btnEddga_Click(object sender, EventArgs e)
         {
-            btnEddga.Enabled = false;
             string nextRespawn = GetNextRespawnTime();
             Mvp mvp = InstantiateMvpObject(btnEddga.Text, btnEddga, nextRespawn);
+            DisableButtonControl(mvp.Name);
             db.RegisterMvpAsKilled(mvp);
             UpdateTextBox();
         }
 
         private void btnEvilSnakeLord_Click(object sender, EventArgs e)
         {
-            btnEvilSnakeLord.Enabled = false;
             string nextRespawn = GetNextRespawnTime();
             Mvp mvp = InstantiateMvpObject(btnEvilSnakeLord.Text, btnEvilSnakeLord, nextRespawn);
+            DisableButtonControl(mvp.Name);
             db.RegisterMvpAsKilled(mvp);
             UpdateTextBox();
         }
 
         private void btnHatii_Click(object sender, EventArgs e)
         {
-            btnHatii.Enabled = false;
             string nextRespawn = GetNextRespawnTime();
             Mvp mvp = InstantiateMvpObject(btnHatii.Text, btnHatii, nextRespawn);
+            DisableButtonControl(mvp.Name);
             db.RegisterMvpAsKilled(mvp);
             UpdateTextBox();
         }
 
         private void btnGTB_Click(object sender, EventArgs e)
         {
-            btnGTB.Enabled = false;
             string nextRespawn = GetNextRespawnTime();
             Mvp mvp = InstantiateMvpObject(btnGTB.Text, btnGTB, nextRespawn);
+            DisableButtonControl(mvp.Name);
             db.RegisterMvpAsKilled(mvp);
             UpdateTextBox();
         }
 
         private void btnHela_Click(object sender, EventArgs e)
         {
-            btnHela.Enabled = false;
             string nextRespawn = GetNextRespawnTime();
             Mvp mvp = InstantiateMvpObject(btnHela.Text, btnHela, nextRespawn);
+            DisableButtonControl(mvp.Name);
             db.RegisterMvpAsKilled(mvp);
             UpdateTextBox();
         }
 
         private void btnScaraba_Click(object sender, EventArgs e)
         {
-            btnScaraba.Enabled = false;
             string nextRespawn = GetNextRespawnTime();
             Mvp mvp = InstantiateMvpObject(btnScaraba.Text, btnScaraba, nextRespawn);
+            DisableButtonControl(mvp.Name);
             db.RegisterMvpAsKilled(mvp);
             UpdateTextBox();
         }
 
         private void btnStormyKnight_Click(object sender, EventArgs e)
         {
-            btnStormyKnight.Enabled = false;
             string nextRespawn = GetNextRespawnTime();
             Mvp mvp = InstantiateMvpObject(btnStormyKnight.Text, btnStormyKnight, nextRespawn);
+            DisableButtonControl(mvp.Name);
             db.RegisterMvpAsKilled(mvp);
             UpdateTextBox();
         }
 
         private void btnLordOfDeath_Click(object sender, EventArgs e)
         {
-            btnLordOfDeath.Enabled = false;
             string nextRespawn = GetNextRespawnTime();
             Mvp mvp = InstantiateMvpObject(btnLordOfDeath.Text, btnLordOfDeath, nextRespawn);
+            DisableButtonControl(mvp.Name);
             db.RegisterMvpAsKilled(mvp);
             UpdateTextBox();
         }
 
         private void btnMayaPurple_Click(object sender, EventArgs e)
         {
-            btnMayaPurple.Enabled = false;
             string nextRespawn = GetNextRespawnTime();
             Mvp mvp = InstantiateMvpObject(btnMayaPurple.Text, btnMayaPurple, nextRespawn);
+            DisableButtonControl(mvp.Name);
             db.RegisterMvpAsKilled(mvp);
             UpdateTextBox();
         }
 
         private void btnMaya_Click(object sender, EventArgs e)
         {
-            btnMaya.Enabled = false;
             string nextRespawn = GetNextRespawnTime();
             Mvp mvp = InstantiateMvpObject(btnMaya.Text, btnMaya, nextRespawn);
+            DisableButtonControl(mvp.Name);
             db.RegisterMvpAsKilled(mvp);
             UpdateTextBox();
         }
 
         private void btnMistress_Click(object sender, EventArgs e)
         {
-            btnMistress.Enabled = false;
             string nextRespawn = GetNextRespawnTime();
             Mvp mvp = InstantiateMvpObject(btnMistress.Text, btnMistress, nextRespawn);
+            DisableButtonControl(mvp.Name);
             db.RegisterMvpAsKilled(mvp);
             UpdateTextBox();
         }
 
         private void btnMoonlightFlower_Click(object sender, EventArgs e)
         {
-            btnMoonlightFlower.Enabled = false;
             string nextRespawn = GetNextRespawnTime();
             Mvp mvp = InstantiateMvpObject(btnMoonlightFlower.Text, btnMoonlightFlower, nextRespawn);
+            DisableButtonControl(mvp.Name);
             db.RegisterMvpAsKilled(mvp);
             UpdateTextBox();
         }
 
         private void btnOrcHero_Click(object sender, EventArgs e)
         {
-            btnOrcHero.Enabled = false;
             string nextRespawn = GetNextRespawnTime();
             Mvp mvp = InstantiateMvpObject(btnOrcHero.Text, btnOrcHero, nextRespawn);
+            DisableButtonControl(mvp.Name);
             db.RegisterMvpAsKilled(mvp);
             UpdateTextBox();
         }
 
         private void btnOrcLord_Click(object sender, EventArgs e)
         {
-            btnOrcLord.Enabled = false;
             string nextRespawn = GetNextRespawnTime();
             Mvp mvp = InstantiateMvpObject(btnOrcLord.Text, btnOrcLord, nextRespawn);
+            DisableButtonControl(mvp.Name);
             db.RegisterMvpAsKilled(mvp);
             UpdateTextBox();
         }
 
         private void btnOsiris_Click(object sender, EventArgs e)
         {
-            btnOsiris.Enabled = false;
             string nextRespawn = GetNextRespawnTime();
             Mvp mvp = InstantiateMvpObject(btnOsiris.Text, btnOsiris, nextRespawn);
+            DisableButtonControl(mvp.Name);
             db.RegisterMvpAsKilled(mvp);
             UpdateTextBox();
         }
 
         private void btnPharaoh_Click(object sender, EventArgs e)
         {
-            btnPharaoh.Enabled = false;
             string nextRespawn = GetNextRespawnTime();
             Mvp mvp = InstantiateMvpObject(btnPharaoh.Text, btnPharaoh, nextRespawn);
+            DisableButtonControl(mvp.Name);
             db.RegisterMvpAsKilled(mvp);
             UpdateTextBox();
         }
 
         private void btnPhreeoni_Click(object sender, EventArgs e)
         {
-            btnPhreeoni.Enabled = false;
             string nextRespawn = GetNextRespawnTime();
             Mvp mvp = InstantiateMvpObject(btnPhreeoni.Text, btnPhreeoni, nextRespawn);
+            DisableButtonControl(mvp.Name);
             db.RegisterMvpAsKilled(mvp);
             UpdateTextBox();
         }
 
         private void btnTurtleGeneral_Click(object sender, EventArgs e)
         {
-            btnTurtleGeneral.Enabled = false;
             string nextRespawn = GetNextRespawnTime();
             Mvp mvp = InstantiateMvpObject(btnTurtleGeneral.Text, btnTurtleGeneral, nextRespawn);
+            DisableButtonControl(mvp.Name);
             db.RegisterMvpAsKilled(mvp);
             UpdateTextBox();
         }
@@ -441,12 +539,15 @@ namespace MvpTracker
             UpdateTextBox();
 
             btnTest.Enabled = false;
-            //btnTest.Visible = false;
+            btnTest.Visible = false;
         }
 
+        /*
+         * Display the statistics for each MVP
+         * 
+         */
         private void btnStatistics_Click(object sender, EventArgs e)
         {
-            // new form, possiblt data grid view
             try
             {
                 StatisticsForm = new StatisticsForm();
@@ -456,8 +557,6 @@ namespace MvpTracker
             {
                 MessageBox.Show(ex.Message);
             }
-
-
         }
     }
 }
