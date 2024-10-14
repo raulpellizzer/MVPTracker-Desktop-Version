@@ -203,7 +203,7 @@ namespace MvpTracker
                             Name = reader["name"].ToString(),
                             KilledTime = reader["killed_time"].ToString(),
                             RespawnDate = reader["next_respawn_time"].ToString(),
-                            buttonControl = null // THINK OF HOW TO LINK BUTTON HERE!
+                            buttonControl = null // THINK OF HOW TO LINK BUTTON HERE! perhaps use a function just to loop and link these controls ..
                         });
                     }
                 }

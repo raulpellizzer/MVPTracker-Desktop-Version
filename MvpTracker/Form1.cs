@@ -41,32 +41,7 @@ namespace MvpTracker
          * Updates text in the text boxes, adding the MVP to either one of the lists, Next Respawn or Possibly Alive
          * 
          */
-        public void UpdateTextBox(List<Mvp> mvpsKilled, string control)
-        {
-            // update here now by reading from database
-            if (control == "nextrespawn")
-            {
-                txtBoxNextRespawns.Clear();
-                foreach (var mvp in mvpsKilled)
-                {
-                    txtBoxNextRespawns.AppendText(mvp.Name + " - " + mvp.RespawnDate);
-                    txtBoxNextRespawns.AppendText(Environment.NewLine);
-                }
-            } else
-            {
-                txtBoxPossiblyAlive.Clear();
-                foreach (var mvp in mvpsAlive)
-                {
-                    txtBoxPossiblyAlive.AppendText(mvp.Name);
-                    txtBoxPossiblyAlive.AppendText(Environment.NewLine);
-                }
-            }
-        }
-
-
-
-
-        public void UpdateTextBoxV2()
+        public void UpdateTextBox()
         {
             mvpsKilled = db.GetMvpList("dead");
             mvpsAlive = db.GetMvpList("alive");
@@ -83,32 +58,13 @@ namespace MvpTracker
             {
                 txtBoxPossiblyAlive.AppendText(mvp.Name);
                 txtBoxPossiblyAlive.AppendText(Environment.NewLine);
+
+                // Big if would be here, one per monster / MVP, not good.. 
+                if (mvp.Name == "Baphomet")
+                    btnBaphomet.Enabled = true;
+
+
             }
-
-        }
-
-
-
-
-
-
-
-        /*
-         * When the MVP is killed, remove MVP from Possibly Alive
-         * 
-         */
-        public void ClearMvpFromAliveList(Mvp mvpKilled)
-        {
-            for (int i = 0; i < mvpsAlive.Count; i++)
-            {
-                if (mvpsAlive[i].Name == mvpKilled.Name)
-                {
-                    mvpsAlive.RemoveAt(i);
-                    break;
-                }
-            }
-
-            UpdateTextBox(mvpsAlive, "alive");
         }
 
         /*
@@ -133,7 +89,7 @@ namespace MvpTracker
          */
         public Mvp InstantiateMvpObject(string mvpName, Control buttonControl, string nextRespawn)
         {
-            Mvp mvp = new Mvp(-1, mvpName, "", nextRespawn, buttonControl);
+            Mvp mvp = new Mvp(-1, mvpName, nextRespawn, "", buttonControl);
             return mvp;
         }
 
@@ -149,12 +105,15 @@ namespace MvpTracker
             UpdateTextBox(mvpsKilled, "nextrespawn");
             */
 
+            // This seems to be finished, just replicate now to all other MVPs
+            // BUT, BIG BUT! NEED to think of buttons being re-enabled. Is a big if the only option?
+
             btnBaphomet.Enabled = false;
             string nextRespawn = GetNextRespawnTime();
             Mvp mvp = InstantiateMvpObject(btnBaphomet.Text, btnBaphomet, nextRespawn);
             db.RegisterMvpAsKilled(mvp);
             //UpdateTextBox(mvpsKilled, "nextrespawn");
-            UpdateTextBoxV2();
+            UpdateTextBox();
 
 
 
@@ -168,8 +127,8 @@ namespace MvpTracker
             Mvp mvp = InstantiateMvpObject(btnDarkLord.Text, btnDarkLord, nextRespawn);
 
             mvpsKilled.Add(mvp);
-            ClearMvpFromAliveList(mvp);
-            UpdateTextBox(mvpsKilled, "nextrespawn");
+            //ClearMvpFromAliveList(mvp);
+            //UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnDoppelganger_Click(object sender, EventArgs e)
@@ -179,8 +138,8 @@ namespace MvpTracker
             Mvp mvp = InstantiateMvpObject(btnDoppelganger.Text, btnDoppelganger, nextRespawn);
 
             mvpsKilled.Add(mvp);
-            ClearMvpFromAliveList(mvp);
-            UpdateTextBox(mvpsKilled, "nextrespawn");
+            //ClearMvpFromAliveList(mvp);
+            //UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnDracula_Click(object sender, EventArgs e)
@@ -190,8 +149,8 @@ namespace MvpTracker
             Mvp mvp = InstantiateMvpObject(btnDracula.Text, btnDracula, nextRespawn);
 
             mvpsKilled.Add(mvp);
-            ClearMvpFromAliveList(mvp);
-            UpdateTextBox(mvpsKilled, "nextrespawn");
+            //ClearMvpFromAliveList(mvp);
+            //UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnDrake_Click(object sender, EventArgs e)
@@ -201,8 +160,8 @@ namespace MvpTracker
             Mvp mvp = InstantiateMvpObject(btnDrake.Text, btnDrake, nextRespawn);
 
             mvpsKilled.Add(mvp);
-            ClearMvpFromAliveList(mvp);
-            UpdateTextBox(mvpsKilled, "nextrespawn");
+            //ClearMvpFromAliveList(mvp);
+            //UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnEddga_Click(object sender, EventArgs e)
@@ -212,8 +171,8 @@ namespace MvpTracker
             Mvp mvp = InstantiateMvpObject(btnEddga.Text, btnEddga, nextRespawn);
 
             mvpsKilled.Add(mvp);
-            ClearMvpFromAliveList(mvp);
-            UpdateTextBox(mvpsKilled, "nextrespawn");
+            //ClearMvpFromAliveList(mvp);
+            //UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnEvilSnakeLord_Click(object sender, EventArgs e)
@@ -223,8 +182,8 @@ namespace MvpTracker
             Mvp mvp = InstantiateMvpObject(btnEvilSnakeLord.Text, btnEvilSnakeLord, nextRespawn);
 
             mvpsKilled.Add(mvp);
-            ClearMvpFromAliveList(mvp);
-            UpdateTextBox(mvpsKilled, "nextrespawn");
+            //ClearMvpFromAliveList(mvp);
+            //UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnHatii_Click(object sender, EventArgs e)
@@ -234,8 +193,8 @@ namespace MvpTracker
             Mvp mvp = InstantiateMvpObject(btnHatii.Text, btnHatii, nextRespawn);
 
             mvpsKilled.Add(mvp);
-            ClearMvpFromAliveList(mvp);
-            UpdateTextBox(mvpsKilled, "nextrespawn");
+            //ClearMvpFromAliveList(mvp);
+            //UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnGTB_Click(object sender, EventArgs e)
@@ -245,8 +204,8 @@ namespace MvpTracker
             Mvp mvp = InstantiateMvpObject(btnGTB.Text, btnGTB, nextRespawn);
 
             mvpsKilled.Add(mvp);
-            ClearMvpFromAliveList(mvp);
-            UpdateTextBox(mvpsKilled, "nextrespawn");
+            //ClearMvpFromAliveList(mvp);
+            //UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnHela_Click(object sender, EventArgs e)
@@ -256,8 +215,8 @@ namespace MvpTracker
             Mvp mvp = InstantiateMvpObject(btnHela.Text, btnHela, nextRespawn);
 
             mvpsKilled.Add(mvp);
-            ClearMvpFromAliveList(mvp);
-            UpdateTextBox(mvpsKilled, "nextrespawn");
+            //ClearMvpFromAliveList(mvp);
+            //UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnScaraba_Click(object sender, EventArgs e)
@@ -267,8 +226,8 @@ namespace MvpTracker
             Mvp mvp = InstantiateMvpObject(btnScaraba.Text, btnScaraba, nextRespawn);
 
             mvpsKilled.Add(mvp);
-            ClearMvpFromAliveList(mvp);
-            UpdateTextBox(mvpsKilled, "nextrespawn");
+            //ClearMvpFromAliveList(mvp);
+            //UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnStormyKnight_Click(object sender, EventArgs e)
@@ -278,8 +237,8 @@ namespace MvpTracker
             Mvp mvp = InstantiateMvpObject(btnStormyKnight.Text, btnStormyKnight, nextRespawn);
 
             mvpsKilled.Add(mvp);
-            ClearMvpFromAliveList(mvp);
-            UpdateTextBox(mvpsKilled, "nextrespawn");
+            //ClearMvpFromAliveList(mvp);
+            //UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnLordOfDeath_Click(object sender, EventArgs e)
@@ -289,8 +248,8 @@ namespace MvpTracker
             Mvp mvp = InstantiateMvpObject(btnLordOfDeath.Text, btnLordOfDeath, nextRespawn);
 
             mvpsKilled.Add(mvp);
-            ClearMvpFromAliveList(mvp);
-            UpdateTextBox(mvpsKilled, "nextrespawn");
+            //ClearMvpFromAliveList(mvp);
+            //UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnMayaPurple_Click(object sender, EventArgs e)
@@ -300,8 +259,8 @@ namespace MvpTracker
             Mvp mvp = InstantiateMvpObject(btnMayaPurple.Text, btnMayaPurple, nextRespawn);
 
             mvpsKilled.Add(mvp);
-            ClearMvpFromAliveList(mvp);
-            UpdateTextBox(mvpsKilled, "nextrespawn");
+            //ClearMvpFromAliveList(mvp);
+            //UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnMaya_Click(object sender, EventArgs e)
@@ -311,8 +270,8 @@ namespace MvpTracker
             Mvp mvp = InstantiateMvpObject(btnMaya.Text, btnMaya, nextRespawn);
 
             mvpsKilled.Add(mvp);
-            ClearMvpFromAliveList(mvp);
-            UpdateTextBox(mvpsKilled, "nextrespawn");
+            //ClearMvpFromAliveList(mvp);
+            //UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnMistress_Click(object sender, EventArgs e)
@@ -322,8 +281,8 @@ namespace MvpTracker
             Mvp mvp = InstantiateMvpObject(btnMistress.Text, btnMistress, nextRespawn);
 
             mvpsKilled.Add(mvp);
-            ClearMvpFromAliveList(mvp);
-            UpdateTextBox(mvpsKilled, "nextrespawn");
+            //ClearMvpFromAliveList(mvp);
+            //UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnMoonlightFlower_Click(object sender, EventArgs e)
@@ -333,8 +292,8 @@ namespace MvpTracker
             Mvp mvp = InstantiateMvpObject(btnMoonlightFlower.Text, btnMoonlightFlower, nextRespawn);
 
             mvpsKilled.Add(mvp);
-            ClearMvpFromAliveList(mvp);
-            UpdateTextBox(mvpsKilled, "nextrespawn");
+            //ClearMvpFromAliveList(mvp);
+            //UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnOrcHero_Click(object sender, EventArgs e)
@@ -344,8 +303,8 @@ namespace MvpTracker
             Mvp mvp = InstantiateMvpObject(btnOrcHero.Text, btnOrcHero, nextRespawn);
 
             mvpsKilled.Add(mvp);
-            ClearMvpFromAliveList(mvp);
-            UpdateTextBox(mvpsKilled, "nextrespawn");
+            //ClearMvpFromAliveList(mvp);
+            //UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnOrcLord_Click(object sender, EventArgs e)
@@ -355,8 +314,8 @@ namespace MvpTracker
             Mvp mvp = InstantiateMvpObject(btnOrcLord.Text, btnOrcLord, nextRespawn);
 
             mvpsKilled.Add(mvp);
-            ClearMvpFromAliveList(mvp);
-            UpdateTextBox(mvpsKilled, "nextrespawn");
+            //ClearMvpFromAliveList(mvp);
+            //UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnOsiris_Click(object sender, EventArgs e)
@@ -366,8 +325,8 @@ namespace MvpTracker
             Mvp mvp = InstantiateMvpObject(btnOsiris.Text, btnOsiris, nextRespawn);
 
             mvpsKilled.Add(mvp);
-            ClearMvpFromAliveList(mvp);
-            UpdateTextBox(mvpsKilled, "nextrespawn");
+            //ClearMvpFromAliveList(mvp);
+            //UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnPharaoh_Click(object sender, EventArgs e)
@@ -377,8 +336,8 @@ namespace MvpTracker
             Mvp mvp = InstantiateMvpObject(btnPharaoh.Text, btnPharaoh, nextRespawn);
 
             mvpsKilled.Add(mvp);
-            ClearMvpFromAliveList(mvp);
-            UpdateTextBox(mvpsKilled, "nextrespawn");
+            //ClearMvpFromAliveList(mvp);
+            //UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnPhreeoni_Click(object sender, EventArgs e)
@@ -388,8 +347,8 @@ namespace MvpTracker
             Mvp mvp = InstantiateMvpObject(btnPhreeoni.Text, btnPhreeoni, nextRespawn);
 
             mvpsKilled.Add(mvp);
-            ClearMvpFromAliveList(mvp);
-            UpdateTextBox(mvpsKilled, "nextrespawn");
+            //ClearMvpFromAliveList(mvp);
+            //UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnTurtleGeneral_Click(object sender, EventArgs e)
@@ -399,8 +358,8 @@ namespace MvpTracker
             Mvp mvp = InstantiateMvpObject(btnTurtleGeneral.Text, btnTurtleGeneral, nextRespawn);
 
             mvpsKilled.Add(mvp);
-            ClearMvpFromAliveList(mvp);
-            UpdateTextBox(mvpsKilled, "nextrespawn");
+            //ClearMvpFromAliveList(mvp);
+            //UpdateTextBox(mvpsKilled, "nextrespawn");
         }
 
         private void btnTest_Click(object sender, EventArgs e)
@@ -409,29 +368,16 @@ namespace MvpTracker
 
             try
             {
-                //SqlConnection conn = db.OpenSqlConnection();
 
 
-                
 
-                //SqlCommand command = new SqlCommand("select name from Mvp", Conn);
-                // int result = command.ExecuteNonQuery();
-                //using (SqlDataReader reader = command.ExecuteReader())
-                //{
-                    //if (reader.Read())
-                    //{
-                        //MessageBox.Show(String.Format("{0}", reader["name"]));
-                    //}
-                //}
-
-                //db.CloseSqlConnection();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
 
-            //MessageBox.Show(db.ConnectionString);
+            
         }
 
         // Perform all MVP checks in a single timer, every minute
@@ -441,36 +387,12 @@ namespace MvpTracker
             db.RegisterMvpAsAlive(mvpsKilled, CultureInfo);
             mvpsKilled = db.GetMvpList("dead");
             //UpdateTextBox(mvpsKilled, "nextrespawn");
-            UpdateTextBoxV2();
-
-
-            /*
-            for (int i = 0; i <= mvpsKilled.Count; i++)
-            {
-                foreach (var mvp in mvpsKilled)
-                {
-
-                    // Check if MVP spawned
-                    if (DateTime.Now > DateTime.ParseExact(mvp.RespawnDate, "yyyyMMddHHmmss", CultureInfo))
-                    {
-                        mvp.buttonControl.Enabled = true;
-                        mvpsKilled.Remove(mvp); // update MvpTracking - is_mvp_dead
-                        mvpsAlive.Add(mvp);
-                        UpdateTextBox(mvpsAlive, "alive");
-                        break;
-                    }
-                }
-
-                i = 0;
-            }
-
-            UpdateTextBox(mvpsKilled, "nextrespawn");
-            */
+            UpdateTextBox();
         }
 
         private void mvpTrackerForm_Load(object sender, EventArgs e)
         {
-            // updates form before is opens.
+            // updates form before is opens. Is this needed? MAYBE
         }
     }
 }
