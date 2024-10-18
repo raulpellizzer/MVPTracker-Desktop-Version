@@ -60,14 +60,23 @@ namespace MvpTracker
          * Sets MVP as killed in MvpTracking table
          * 
          */
-        public void RegisterMvpAsKilled(Mvp mvp)
+        public void RegisterMvpAsKilled(Mvp mvp, bool trackForOtherPlayer)
         {
             OpenSqlConnection();
             int mvpId = GetMvpId(mvp.Name);
             int mvpKilledCount = GetMvpKilledCount(mvpId);
+            string updateQuery = "";
 
-            string updateQuery = $"UPDATE MvpTracking SET killed_time = '{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")}', next_respawn_time= '{mvp.RespawnDate}', is_mvp_dead = 1, killed_count = {++mvpKilledCount} ";
-            updateQuery += $"WHERE id = {mvpId}";
+
+            if (trackForOtherPlayer)
+            {
+                updateQuery = $"UPDATE MvpTracking SET killed_time = '{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")}', next_respawn_time= '{mvp.RespawnDate}', is_mvp_dead = 1 ";
+                updateQuery += $"WHERE id = {mvpId}";
+            } else
+            {
+                updateQuery = $"UPDATE MvpTracking SET killed_time = '{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")}', next_respawn_time= '{mvp.RespawnDate}', is_mvp_dead = 1, killed_count = {++mvpKilledCount} ";
+                updateQuery += $"WHERE id = {mvpId}";
+            }
 
             try
             {

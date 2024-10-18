@@ -35,9 +35,6 @@
             this.txtBoxNextRespawns = new System.Windows.Forms.TextBox();
             this.gpBoxMvp = new System.Windows.Forms.GroupBox();
             this.btnTest = new System.Windows.Forms.Button();
-            this.txtBoxPossiblyAlive = new System.Windows.Forms.TextBox();
-            this.mvpTimer = new System.Windows.Forms.Timer(this.components);
-            this.btnStatistics = new System.Windows.Forms.Button();
             this.btnTurtleGeneral = new System.Windows.Forms.Button();
             this.btnPhreeoni = new System.Windows.Forms.Button();
             this.btnPharaoh = new System.Windows.Forms.Button();
@@ -61,6 +58,11 @@
             this.btnDarkLord = new System.Windows.Forms.Button();
             this.btnBaphomet = new System.Windows.Forms.Button();
             this.btnDoppelganger = new System.Windows.Forms.Button();
+            this.txtBoxPossiblyAlive = new System.Windows.Forms.TextBox();
+            this.mvpTimer = new System.Windows.Forms.Timer(this.components);
+            this.btnStatistics = new System.Windows.Forms.Button();
+            this.ckBoxTrackOtherPlayer = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.gpBoxMvp.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -152,36 +154,6 @@
             this.btnTest.Text = "Test";
             this.btnTest.UseVisualStyleBackColor = true;
             this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
-            // 
-            // txtBoxPossiblyAlive
-            // 
-            this.txtBoxPossiblyAlive.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.txtBoxPossiblyAlive.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBoxPossiblyAlive.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxPossiblyAlive.Location = new System.Drawing.Point(1065, 106);
-            this.txtBoxPossiblyAlive.Multiline = true;
-            this.txtBoxPossiblyAlive.Name = "txtBoxPossiblyAlive";
-            this.txtBoxPossiblyAlive.ReadOnly = true;
-            this.txtBoxPossiblyAlive.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtBoxPossiblyAlive.Size = new System.Drawing.Size(279, 420);
-            this.txtBoxPossiblyAlive.TabIndex = 6;
-            // 
-            // mvpTimer
-            // 
-            this.mvpTimer.Enabled = true;
-            this.mvpTimer.Interval = 10000;
-            this.mvpTimer.Tick += new System.EventHandler(this.mvpTimer_Tick);
-            // 
-            // btnStatistics
-            // 
-            this.btnStatistics.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStatistics.Location = new System.Drawing.Point(27, 498);
-            this.btnStatistics.Name = "btnStatistics";
-            this.btnStatistics.Size = new System.Drawing.Size(162, 28);
-            this.btnStatistics.TabIndex = 26;
-            this.btnStatistics.Text = "MVP Statistics";
-            this.btnStatistics.UseVisualStyleBackColor = true;
-            this.btnStatistics.Click += new System.EventHandler(this.btnStatistics_Click);
             // 
             // btnTurtleGeneral
             // 
@@ -459,11 +431,64 @@
             this.btnDoppelganger.UseVisualStyleBackColor = true;
             this.btnDoppelganger.Click += new System.EventHandler(this.btnDoppelganger_Click);
             // 
+            // txtBoxPossiblyAlive
+            // 
+            this.txtBoxPossiblyAlive.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtBoxPossiblyAlive.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBoxPossiblyAlive.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxPossiblyAlive.Location = new System.Drawing.Point(1065, 106);
+            this.txtBoxPossiblyAlive.Multiline = true;
+            this.txtBoxPossiblyAlive.Name = "txtBoxPossiblyAlive";
+            this.txtBoxPossiblyAlive.ReadOnly = true;
+            this.txtBoxPossiblyAlive.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtBoxPossiblyAlive.Size = new System.Drawing.Size(279, 420);
+            this.txtBoxPossiblyAlive.TabIndex = 6;
+            // 
+            // mvpTimer
+            // 
+            this.mvpTimer.Enabled = true;
+            this.mvpTimer.Interval = 10000;
+            this.mvpTimer.Tick += new System.EventHandler(this.mvpTimer_Tick);
+            // 
+            // btnStatistics
+            // 
+            this.btnStatistics.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStatistics.Location = new System.Drawing.Point(27, 498);
+            this.btnStatistics.Name = "btnStatistics";
+            this.btnStatistics.Size = new System.Drawing.Size(162, 28);
+            this.btnStatistics.TabIndex = 26;
+            this.btnStatistics.Text = "MVP Statistics";
+            this.btnStatistics.UseVisualStyleBackColor = true;
+            this.btnStatistics.Click += new System.EventHandler(this.btnStatistics_Click);
+            // 
+            // ckBoxTrackOtherPlayer
+            // 
+            this.ckBoxTrackOtherPlayer.AutoSize = true;
+            this.ckBoxTrackOtherPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckBoxTrackOtherPlayer.Location = new System.Drawing.Point(533, 505);
+            this.ckBoxTrackOtherPlayer.Name = "ckBoxTrackOtherPlayer";
+            this.ckBoxTrackOtherPlayer.Size = new System.Drawing.Size(179, 17);
+            this.ckBoxTrackOtherPlayer.TabIndex = 27;
+            this.ckBoxTrackOtherPlayer.Text = "Track MVP for other player";
+            this.ckBoxTrackOtherPlayer.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(549, 525);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(128, 14);
+            this.label4.TabIndex = 28;
+            this.label4.Text = "(Do not add to my totals)";
+            // 
             // mvpTrackerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1385, 567);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.ckBoxTrackOtherPlayer);
             this.Controls.Add(this.btnStatistics);
             this.Controls.Add(this.txtBoxPossiblyAlive);
             this.Controls.Add(this.gpBoxMvp);
@@ -515,6 +540,8 @@
         private System.Windows.Forms.Button btnTest;
         private System.Windows.Forms.Timer mvpTimer;
         private System.Windows.Forms.Button btnStatistics;
+        private System.Windows.Forms.CheckBox ckBoxTrackOtherPlayer;
+        private System.Windows.Forms.Label label4;
     }
 }
 

@@ -5,7 +5,7 @@ using System.Globalization;
 using System.Windows.Forms;
 
 /*
- * To-do's: - 
+ * To-do's: - Add version number to front end
  * 
  * 
  * 
@@ -277,7 +277,7 @@ namespace MvpTracker
             if (environment == "prod")
                 nextRespawn = DateTime.Now.AddHours(1).ToString("yyyy-MM-dd HH:mm:ss.fff");
             else
-                nextRespawn = DateTime.Now.AddSeconds(130).ToString("yyyy-MM-dd HH:mm:ss.fff");
+                nextRespawn = DateTime.Now.AddSeconds(15).ToString("yyyy-MM-dd HH:mm:ss.fff");
 
             return nextRespawn;
         } 
@@ -294,209 +294,799 @@ namespace MvpTracker
 
         private void btnBaphomet_Click(object sender, EventArgs e)
         {
-            string nextRespawn = GetNextRespawnTime();
-            Mvp mvp = InstantiateMvpObject(btnBaphomet.Text, btnBaphomet, nextRespawn);
-            DisableButtonControl(mvp.Name);
-            db.RegisterMvpAsKilled(mvp);
+            string nextRespawn = "";
+            Mvp mvp = null;
+            bool trackForOtherPlayer = ckBoxTrackOtherPlayer.Checked;
+            bool disclaimer;
+
+            if (trackForOtherPlayer)
+            {
+                disclaimer = GetUserAnswer();
+
+                if (disclaimer)
+                {
+                    nextRespawn = GetNextRespawnTime();
+                    mvp = InstantiateMvpObject(btnBaphomet.Text, btnBaphomet, nextRespawn);
+                    DisableButtonControl(mvp.Name);
+                    db.RegisterMvpAsKilled(mvp, true);
+
+                } else
+                    return;
+
+            } else
+            {
+                nextRespawn = GetNextRespawnTime();
+                mvp = InstantiateMvpObject(btnBaphomet.Text, btnBaphomet, nextRespawn);
+                DisableButtonControl(mvp.Name);
+                db.RegisterMvpAsKilled(mvp, false);
+            }
+
             UpdateTextBox();
         }
 
         private void btnDarkLord_Click(object sender, EventArgs e)
         {
-            string nextRespawn = GetNextRespawnTime();
-            Mvp mvp = InstantiateMvpObject(btnDarkLord.Text, btnDarkLord, nextRespawn);
-            DisableButtonControl(mvp.Name);
-            db.RegisterMvpAsKilled(mvp);
+            string nextRespawn = "";
+            Mvp mvp = null;
+            bool trackForOtherPlayer = ckBoxTrackOtherPlayer.Checked;
+            bool disclaimer;
+
+            if (trackForOtherPlayer)
+            {
+                disclaimer = GetUserAnswer();
+
+                if (disclaimer)
+                {
+                    nextRespawn = GetNextRespawnTime();
+                    mvp = InstantiateMvpObject(btnDarkLord.Text, btnDarkLord, nextRespawn);
+                    DisableButtonControl(mvp.Name);
+                    db.RegisterMvpAsKilled(mvp, true);
+
+                }
+                else
+                    return;
+
+            }
+            else
+            {
+                nextRespawn = GetNextRespawnTime();
+                mvp = InstantiateMvpObject(btnDarkLord.Text, btnDarkLord, nextRespawn);
+                DisableButtonControl(mvp.Name);
+                db.RegisterMvpAsKilled(mvp, false);
+            }
+
             UpdateTextBox();
         }
 
         private void btnDoppelganger_Click(object sender, EventArgs e)
         {
-            string nextRespawn = GetNextRespawnTime();
-            Mvp mvp = InstantiateMvpObject(btnDoppelganger.Text, btnDoppelganger, nextRespawn);
-            DisableButtonControl(mvp.Name);
-            db.RegisterMvpAsKilled(mvp);
+            string nextRespawn = "";
+            Mvp mvp = null;
+            bool trackForOtherPlayer = ckBoxTrackOtherPlayer.Checked;
+            bool disclaimer;
+
+            if (trackForOtherPlayer)
+            {
+                disclaimer = GetUserAnswer();
+
+                if (disclaimer)
+                {
+                    nextRespawn = GetNextRespawnTime();
+                    mvp = InstantiateMvpObject(btnDoppelganger.Text, btnDoppelganger, nextRespawn);
+                    DisableButtonControl(mvp.Name);
+                    db.RegisterMvpAsKilled(mvp, true);
+                }
+                else
+                    return;
+
+            }
+            else
+            {
+                nextRespawn = GetNextRespawnTime();
+                mvp = InstantiateMvpObject(btnDoppelganger.Text, btnDoppelganger, nextRespawn);
+                DisableButtonControl(mvp.Name);
+                db.RegisterMvpAsKilled(mvp, false);
+            }
+
             UpdateTextBox();
         }
 
         private void btnDracula_Click(object sender, EventArgs e)
         {
-            string nextRespawn = GetNextRespawnTime();
-            Mvp mvp = InstantiateMvpObject(btnDracula.Text, btnDracula, nextRespawn);
-            DisableButtonControl(mvp.Name);
-            db.RegisterMvpAsKilled(mvp);
+            string nextRespawn = "";
+            Mvp mvp = null;
+            bool trackForOtherPlayer = ckBoxTrackOtherPlayer.Checked;
+            bool disclaimer;
+
+            if (trackForOtherPlayer)
+            {
+                disclaimer = GetUserAnswer();
+
+                if (disclaimer)
+                {
+                    nextRespawn = GetNextRespawnTime();
+                    mvp = InstantiateMvpObject(btnDracula.Text, btnDracula, nextRespawn);
+                    DisableButtonControl(mvp.Name);
+                    db.RegisterMvpAsKilled(mvp, true);
+
+                }
+                else
+                    return;
+
+            }
+            else
+            {
+                nextRespawn = GetNextRespawnTime();
+                mvp = InstantiateMvpObject(btnDracula.Text, btnDracula, nextRespawn);
+                DisableButtonControl(mvp.Name);
+                db.RegisterMvpAsKilled(mvp, false);
+            }
+
             UpdateTextBox();
         }
 
         private void btnDrake_Click(object sender, EventArgs e)
         {
-            string nextRespawn = GetNextRespawnTime();
-            Mvp mvp = InstantiateMvpObject(btnDrake.Text, btnDrake, nextRespawn);
-            DisableButtonControl(mvp.Name);
-            db.RegisterMvpAsKilled(mvp);
+            string nextRespawn = "";
+            Mvp mvp = null;
+            bool trackForOtherPlayer = ckBoxTrackOtherPlayer.Checked;
+            bool disclaimer;
+
+            if (trackForOtherPlayer)
+            {
+                disclaimer = GetUserAnswer();
+
+                if (disclaimer)
+                {
+                    nextRespawn = GetNextRespawnTime();
+                    mvp = InstantiateMvpObject(btnDrake.Text, btnDrake, nextRespawn);
+                    DisableButtonControl(mvp.Name);
+                    db.RegisterMvpAsKilled(mvp, true);
+
+                }
+                else
+                    return;
+
+            }
+            else
+            {
+                nextRespawn = GetNextRespawnTime();
+                mvp = InstantiateMvpObject(btnDrake.Text, btnDrake, nextRespawn);
+                DisableButtonControl(mvp.Name);
+                db.RegisterMvpAsKilled(mvp, false);
+            }
+
             UpdateTextBox();
         }
 
         private void btnEddga_Click(object sender, EventArgs e)
         {
-            string nextRespawn = GetNextRespawnTime();
-            Mvp mvp = InstantiateMvpObject(btnEddga.Text, btnEddga, nextRespawn);
-            DisableButtonControl(mvp.Name);
-            db.RegisterMvpAsKilled(mvp);
+            string nextRespawn = "";
+            Mvp mvp = null;
+            bool trackForOtherPlayer = ckBoxTrackOtherPlayer.Checked;
+            bool disclaimer;
+
+            if (trackForOtherPlayer)
+            {
+                disclaimer = GetUserAnswer();
+
+                if (disclaimer)
+                {
+                    nextRespawn = GetNextRespawnTime();
+                    mvp = InstantiateMvpObject(btnEddga.Text, btnEddga, nextRespawn);
+                    DisableButtonControl(mvp.Name);
+                    db.RegisterMvpAsKilled(mvp, true);
+
+                }
+                else
+                    return;
+
+            }
+            else
+            {
+                nextRespawn = GetNextRespawnTime();
+                mvp = InstantiateMvpObject(btnEddga.Text, btnEddga, nextRespawn);
+                DisableButtonControl(mvp.Name);
+                db.RegisterMvpAsKilled(mvp, false);
+            }
+
             UpdateTextBox();
         }
 
         private void btnEvilSnakeLord_Click(object sender, EventArgs e)
         {
-            string nextRespawn = GetNextRespawnTime();
-            Mvp mvp = InstantiateMvpObject(btnEvilSnakeLord.Text, btnEvilSnakeLord, nextRespawn);
-            DisableButtonControl(mvp.Name);
-            db.RegisterMvpAsKilled(mvp);
+            string nextRespawn = "";
+            Mvp mvp = null;
+            bool trackForOtherPlayer = ckBoxTrackOtherPlayer.Checked;
+            bool disclaimer;
+
+            if (trackForOtherPlayer)
+            {
+                disclaimer = GetUserAnswer();
+
+                if (disclaimer)
+                {
+                    nextRespawn = GetNextRespawnTime();
+                    mvp = InstantiateMvpObject(btnEvilSnakeLord.Text, btnEvilSnakeLord, nextRespawn);
+                    DisableButtonControl(mvp.Name);
+                    db.RegisterMvpAsKilled(mvp, true);
+                }
+                else
+                    return;
+
+            }
+            else
+            {
+                nextRespawn = GetNextRespawnTime();
+                mvp = InstantiateMvpObject(btnEvilSnakeLord.Text, btnEvilSnakeLord, nextRespawn);
+                DisableButtonControl(mvp.Name);
+                db.RegisterMvpAsKilled(mvp, false);
+            }
+
             UpdateTextBox();
         }
 
         private void btnHatii_Click(object sender, EventArgs e)
         {
-            string nextRespawn = GetNextRespawnTime();
-            Mvp mvp = InstantiateMvpObject(btnHatii.Text, btnHatii, nextRespawn);
-            DisableButtonControl(mvp.Name);
-            db.RegisterMvpAsKilled(mvp);
+            string nextRespawn = "";
+            Mvp mvp = null;
+            bool trackForOtherPlayer = ckBoxTrackOtherPlayer.Checked;
+            bool disclaimer;
+
+            if (trackForOtherPlayer)
+            {
+                disclaimer = GetUserAnswer();
+
+                if (disclaimer)
+                {
+                    nextRespawn = GetNextRespawnTime();
+                    mvp = InstantiateMvpObject(btnHatii.Text, btnHatii, nextRespawn);
+                    DisableButtonControl(mvp.Name);
+                    db.RegisterMvpAsKilled(mvp, true);
+
+                }
+                else
+                    return;
+
+            }
+            else
+            {
+                nextRespawn = GetNextRespawnTime();
+                mvp = InstantiateMvpObject(btnHatii.Text, btnHatii, nextRespawn);
+                DisableButtonControl(mvp.Name);
+                db.RegisterMvpAsKilled(mvp, false);
+            }
+
             UpdateTextBox();
         }
 
         private void btnGTB_Click(object sender, EventArgs e)
         {
-            string nextRespawn = GetNextRespawnTime();
-            Mvp mvp = InstantiateMvpObject(btnGTB.Text, btnGTB, nextRespawn);
-            DisableButtonControl(mvp.Name);
-            db.RegisterMvpAsKilled(mvp);
+            string nextRespawn = "";
+            Mvp mvp = null;
+            bool trackForOtherPlayer = ckBoxTrackOtherPlayer.Checked;
+            bool disclaimer;
+
+            if (trackForOtherPlayer)
+            {
+                disclaimer = GetUserAnswer();
+
+                if (disclaimer)
+                {
+                    nextRespawn = GetNextRespawnTime();
+                    mvp = InstantiateMvpObject(btnGTB.Text, btnGTB, nextRespawn);
+                    DisableButtonControl(mvp.Name);
+                    db.RegisterMvpAsKilled(mvp, true);
+
+                }
+                else
+                    return;
+
+            }
+            else
+            {
+                nextRespawn = GetNextRespawnTime();
+                mvp = InstantiateMvpObject(btnGTB.Text, btnGTB, nextRespawn);
+                DisableButtonControl(mvp.Name);
+                db.RegisterMvpAsKilled(mvp, false);
+            }
+
             UpdateTextBox();
         }
 
         private void btnHela_Click(object sender, EventArgs e)
         {
-            string nextRespawn = GetNextRespawnTime();
-            Mvp mvp = InstantiateMvpObject(btnHela.Text, btnHela, nextRespawn);
-            DisableButtonControl(mvp.Name);
-            db.RegisterMvpAsKilled(mvp);
+            string nextRespawn = "";
+            Mvp mvp = null;
+            bool trackForOtherPlayer = ckBoxTrackOtherPlayer.Checked;
+            bool disclaimer;
+
+            if (trackForOtherPlayer)
+            {
+                disclaimer = GetUserAnswer();
+
+                if (disclaimer)
+                {
+                    nextRespawn = GetNextRespawnTime();
+                    mvp = InstantiateMvpObject(btnHela.Text, btnHela, nextRespawn);
+                    DisableButtonControl(mvp.Name);
+                    db.RegisterMvpAsKilled(mvp, true);
+
+                }
+                else
+                    return;
+
+            }
+            else
+            {
+                nextRespawn = GetNextRespawnTime();
+                mvp = InstantiateMvpObject(btnHela.Text, btnHela, nextRespawn);
+                DisableButtonControl(mvp.Name);
+                db.RegisterMvpAsKilled(mvp, false);
+            }
+
             UpdateTextBox();
         }
 
         private void btnScaraba_Click(object sender, EventArgs e)
         {
-            string nextRespawn = GetNextRespawnTime();
-            Mvp mvp = InstantiateMvpObject(btnScaraba.Text, btnScaraba, nextRespawn);
-            DisableButtonControl(mvp.Name);
-            db.RegisterMvpAsKilled(mvp);
+            string nextRespawn = "";
+            Mvp mvp = null;
+            bool trackForOtherPlayer = ckBoxTrackOtherPlayer.Checked;
+            bool disclaimer;
+
+            if (trackForOtherPlayer)
+            {
+                disclaimer = GetUserAnswer();
+
+                if (disclaimer)
+                {
+                    nextRespawn = GetNextRespawnTime();
+                    mvp = InstantiateMvpObject(btnScaraba.Text, btnScaraba, nextRespawn);
+                    DisableButtonControl(mvp.Name);
+                    db.RegisterMvpAsKilled(mvp, true);
+
+                }
+                else
+                    return;
+
+            }
+            else
+            {
+                nextRespawn = GetNextRespawnTime();
+                mvp = InstantiateMvpObject(btnScaraba.Text, btnScaraba, nextRespawn);
+                DisableButtonControl(mvp.Name);
+                db.RegisterMvpAsKilled(mvp, false);
+            }
+
             UpdateTextBox();
         }
 
         private void btnStormyKnight_Click(object sender, EventArgs e)
         {
-            string nextRespawn = GetNextRespawnTime();
-            Mvp mvp = InstantiateMvpObject(btnStormyKnight.Text, btnStormyKnight, nextRespawn);
-            DisableButtonControl(mvp.Name);
-            db.RegisterMvpAsKilled(mvp);
+            string nextRespawn = "";
+            Mvp mvp = null;
+            bool trackForOtherPlayer = ckBoxTrackOtherPlayer.Checked;
+            bool disclaimer;
+
+            if (trackForOtherPlayer)
+            {
+                disclaimer = GetUserAnswer();
+
+                if (disclaimer)
+                {
+                    nextRespawn = GetNextRespawnTime();
+                    mvp = InstantiateMvpObject(btnStormyKnight.Text, btnStormyKnight, nextRespawn);
+                    DisableButtonControl(mvp.Name);
+                    db.RegisterMvpAsKilled(mvp, true);
+
+                }
+                else
+                    return;
+
+            }
+            else
+            {
+                nextRespawn = GetNextRespawnTime();
+                mvp = InstantiateMvpObject(btnStormyKnight.Text, btnStormyKnight, nextRespawn);
+                DisableButtonControl(mvp.Name);
+                db.RegisterMvpAsKilled(mvp, false);
+            }
+
             UpdateTextBox();
         }
 
         private void btnLordOfDeath_Click(object sender, EventArgs e)
         {
-            string nextRespawn = GetNextRespawnTime();
-            Mvp mvp = InstantiateMvpObject(btnLordOfDeath.Text, btnLordOfDeath, nextRespawn);
-            DisableButtonControl(mvp.Name);
-            db.RegisterMvpAsKilled(mvp);
+            string nextRespawn = "";
+            Mvp mvp = null;
+            bool trackForOtherPlayer = ckBoxTrackOtherPlayer.Checked;
+            bool disclaimer;
+
+            if (trackForOtherPlayer)
+            {
+                disclaimer = GetUserAnswer();
+
+                if (disclaimer)
+                {
+                    nextRespawn = GetNextRespawnTime();
+                    mvp = InstantiateMvpObject(btnLordOfDeath.Text, btnLordOfDeath, nextRespawn);
+                    DisableButtonControl(mvp.Name);
+                    db.RegisterMvpAsKilled(mvp, true);
+
+                }
+                else
+                    return;
+
+            }
+            else
+            {
+                nextRespawn = GetNextRespawnTime();
+                mvp = InstantiateMvpObject(btnLordOfDeath.Text, btnLordOfDeath, nextRespawn);
+                DisableButtonControl(mvp.Name);
+                db.RegisterMvpAsKilled(mvp, false);
+            }
+
             UpdateTextBox();
         }
 
         private void btnMayaPurple_Click(object sender, EventArgs e)
         {
-            string nextRespawn = GetNextRespawnTime();
-            Mvp mvp = InstantiateMvpObject(btnMayaPurple.Text, btnMayaPurple, nextRespawn);
-            DisableButtonControl(mvp.Name);
-            db.RegisterMvpAsKilled(mvp);
+            string nextRespawn = "";
+            Mvp mvp = null;
+            bool trackForOtherPlayer = ckBoxTrackOtherPlayer.Checked;
+            bool disclaimer;
+
+            if (trackForOtherPlayer)
+            {
+                disclaimer = GetUserAnswer();
+
+                if (disclaimer)
+                {
+                    nextRespawn = GetNextRespawnTime();
+                    mvp = InstantiateMvpObject(btnMayaPurple.Text, btnMayaPurple, nextRespawn);
+                    DisableButtonControl(mvp.Name);
+                    db.RegisterMvpAsKilled(mvp, true);
+
+                }
+                else
+                    return;
+
+            }
+            else
+            {
+                nextRespawn = GetNextRespawnTime();
+                mvp = InstantiateMvpObject(btnMayaPurple.Text, btnMayaPurple, nextRespawn);
+                DisableButtonControl(mvp.Name);
+                db.RegisterMvpAsKilled(mvp, false);
+            }
+
             UpdateTextBox();
         }
 
         private void btnMaya_Click(object sender, EventArgs e)
         {
-            string nextRespawn = GetNextRespawnTime();
-            Mvp mvp = InstantiateMvpObject(btnMaya.Text, btnMaya, nextRespawn);
-            DisableButtonControl(mvp.Name);
-            db.RegisterMvpAsKilled(mvp);
+            string nextRespawn = "";
+            Mvp mvp = null;
+            bool trackForOtherPlayer = ckBoxTrackOtherPlayer.Checked;
+            bool disclaimer;
+
+            if (trackForOtherPlayer)
+            {
+                disclaimer = GetUserAnswer();
+
+                if (disclaimer)
+                {
+                    nextRespawn = GetNextRespawnTime();
+                    mvp = InstantiateMvpObject(btnMaya.Text, btnMaya, nextRespawn);
+                    DisableButtonControl(mvp.Name);
+                    db.RegisterMvpAsKilled(mvp, true);
+
+                }
+                else
+                    return;
+
+            }
+            else
+            {
+                nextRespawn = GetNextRespawnTime();
+                mvp = InstantiateMvpObject(btnMaya.Text, btnMaya, nextRespawn);
+                DisableButtonControl(mvp.Name);
+                db.RegisterMvpAsKilled(mvp, false);
+            }
+
             UpdateTextBox();
         }
 
         private void btnMistress_Click(object sender, EventArgs e)
         {
-            string nextRespawn = GetNextRespawnTime();
-            Mvp mvp = InstantiateMvpObject(btnMistress.Text, btnMistress, nextRespawn);
-            DisableButtonControl(mvp.Name);
-            db.RegisterMvpAsKilled(mvp);
+            string nextRespawn = "";
+            Mvp mvp = null;
+            bool trackForOtherPlayer = ckBoxTrackOtherPlayer.Checked;
+            bool disclaimer;
+
+            if (trackForOtherPlayer)
+            {
+                disclaimer = GetUserAnswer();
+
+                if (disclaimer)
+                {
+                    nextRespawn = GetNextRespawnTime();
+                    mvp = InstantiateMvpObject(btnMistress.Text, btnMistress, nextRespawn);
+                    DisableButtonControl(mvp.Name);
+                    db.RegisterMvpAsKilled(mvp, true);
+
+                }
+                else
+                    return;
+
+            }
+            else
+            {
+                nextRespawn = GetNextRespawnTime();
+                mvp = InstantiateMvpObject(btnMistress.Text, btnMistress, nextRespawn);
+                DisableButtonControl(mvp.Name);
+                db.RegisterMvpAsKilled(mvp, false);
+            }
+
             UpdateTextBox();
         }
 
         private void btnMoonlightFlower_Click(object sender, EventArgs e)
         {
-            string nextRespawn = GetNextRespawnTime();
-            Mvp mvp = InstantiateMvpObject(btnMoonlightFlower.Text, btnMoonlightFlower, nextRespawn);
-            DisableButtonControl(mvp.Name);
-            db.RegisterMvpAsKilled(mvp);
+            string nextRespawn = "";
+            Mvp mvp = null;
+            bool trackForOtherPlayer = ckBoxTrackOtherPlayer.Checked;
+            bool disclaimer;
+
+            if (trackForOtherPlayer)
+            {
+                disclaimer = GetUserAnswer();
+
+                if (disclaimer)
+                {
+                    nextRespawn = GetNextRespawnTime();
+                    mvp = InstantiateMvpObject(btnMoonlightFlower.Text, btnMoonlightFlower, nextRespawn);
+                    DisableButtonControl(mvp.Name);
+                    db.RegisterMvpAsKilled(mvp, true);
+
+                }
+                else
+                    return;
+
+            }
+            else
+            {
+                nextRespawn = GetNextRespawnTime();
+                mvp = InstantiateMvpObject(btnMoonlightFlower.Text, btnMoonlightFlower, nextRespawn);
+                DisableButtonControl(mvp.Name);
+                db.RegisterMvpAsKilled(mvp, false);
+            }
+
             UpdateTextBox();
         }
 
         private void btnOrcHero_Click(object sender, EventArgs e)
         {
-            string nextRespawn = GetNextRespawnTime();
-            Mvp mvp = InstantiateMvpObject(btnOrcHero.Text, btnOrcHero, nextRespawn);
-            DisableButtonControl(mvp.Name);
-            db.RegisterMvpAsKilled(mvp);
+            string nextRespawn = "";
+            Mvp mvp = null;
+            bool trackForOtherPlayer = ckBoxTrackOtherPlayer.Checked;
+            bool disclaimer;
+
+            if (trackForOtherPlayer)
+            {
+                disclaimer = GetUserAnswer();
+
+                if (disclaimer)
+                {
+                    nextRespawn = GetNextRespawnTime();
+                    mvp = InstantiateMvpObject(btnOrcHero.Text, btnOrcHero, nextRespawn);
+                    DisableButtonControl(mvp.Name);
+                    db.RegisterMvpAsKilled(mvp, true);
+
+                }
+                else
+                    return;
+
+            }
+            else
+            {
+                nextRespawn = GetNextRespawnTime();
+                mvp = InstantiateMvpObject(btnOrcHero.Text, btnOrcHero, nextRespawn);
+                DisableButtonControl(mvp.Name);
+                db.RegisterMvpAsKilled(mvp, false);
+            }
+
             UpdateTextBox();
         }
 
         private void btnOrcLord_Click(object sender, EventArgs e)
         {
-            string nextRespawn = GetNextRespawnTime();
-            Mvp mvp = InstantiateMvpObject(btnOrcLord.Text, btnOrcLord, nextRespawn);
-            DisableButtonControl(mvp.Name);
-            db.RegisterMvpAsKilled(mvp);
+            string nextRespawn = "";
+            Mvp mvp = null;
+            bool trackForOtherPlayer = ckBoxTrackOtherPlayer.Checked;
+            bool disclaimer;
+
+            if (trackForOtherPlayer)
+            {
+                disclaimer = GetUserAnswer();
+
+                if (disclaimer)
+                {
+                    nextRespawn = GetNextRespawnTime();
+                    mvp = InstantiateMvpObject(btnOrcLord.Text, btnOrcLord, nextRespawn);
+                    DisableButtonControl(mvp.Name);
+                    db.RegisterMvpAsKilled(mvp, true);
+
+                }
+                else
+                    return;
+
+            }
+            else
+            {
+                nextRespawn = GetNextRespawnTime();
+                mvp = InstantiateMvpObject(btnOrcLord.Text, btnOrcLord, nextRespawn);
+                DisableButtonControl(mvp.Name);
+                db.RegisterMvpAsKilled(mvp, false);
+            }
+
             UpdateTextBox();
         }
 
         private void btnOsiris_Click(object sender, EventArgs e)
         {
-            string nextRespawn = GetNextRespawnTime();
-            Mvp mvp = InstantiateMvpObject(btnOsiris.Text, btnOsiris, nextRespawn);
-            DisableButtonControl(mvp.Name);
-            db.RegisterMvpAsKilled(mvp);
+            string nextRespawn = "";
+            Mvp mvp = null;
+            bool trackForOtherPlayer = ckBoxTrackOtherPlayer.Checked;
+            bool disclaimer;
+
+            if (trackForOtherPlayer)
+            {
+                disclaimer = GetUserAnswer();
+
+                if (disclaimer)
+                {
+                    nextRespawn = GetNextRespawnTime();
+                    mvp = InstantiateMvpObject(btnOsiris.Text, btnOsiris, nextRespawn);
+                    DisableButtonControl(mvp.Name);
+                    db.RegisterMvpAsKilled(mvp, true);
+
+                }
+                else
+                    return;
+
+            }
+            else
+            {
+                nextRespawn = GetNextRespawnTime();
+                mvp = InstantiateMvpObject(btnOsiris.Text, btnOsiris, nextRespawn);
+                DisableButtonControl(mvp.Name);
+                db.RegisterMvpAsKilled(mvp, false);
+            }
+
             UpdateTextBox();
         }
 
         private void btnPharaoh_Click(object sender, EventArgs e)
         {
-            string nextRespawn = GetNextRespawnTime();
-            Mvp mvp = InstantiateMvpObject(btnPharaoh.Text, btnPharaoh, nextRespawn);
-            DisableButtonControl(mvp.Name);
-            db.RegisterMvpAsKilled(mvp);
+            string nextRespawn = "";
+            Mvp mvp = null;
+            bool trackForOtherPlayer = ckBoxTrackOtherPlayer.Checked;
+            bool disclaimer;
+
+            if (trackForOtherPlayer)
+            {
+                disclaimer = GetUserAnswer();
+
+                if (disclaimer)
+                {
+                    nextRespawn = GetNextRespawnTime();
+                    mvp = InstantiateMvpObject(btnPharaoh.Text, btnPharaoh, nextRespawn);
+                    DisableButtonControl(mvp.Name);
+                    db.RegisterMvpAsKilled(mvp, true);
+
+                }
+                else
+                    return;
+
+            }
+            else
+            {
+                nextRespawn = GetNextRespawnTime();
+                mvp = InstantiateMvpObject(btnPharaoh.Text, btnPharaoh, nextRespawn);
+                DisableButtonControl(mvp.Name);
+                db.RegisterMvpAsKilled(mvp, false);
+            }
+
             UpdateTextBox();
         }
 
         private void btnPhreeoni_Click(object sender, EventArgs e)
         {
-            string nextRespawn = GetNextRespawnTime();
-            Mvp mvp = InstantiateMvpObject(btnPhreeoni.Text, btnPhreeoni, nextRespawn);
-            DisableButtonControl(mvp.Name);
-            db.RegisterMvpAsKilled(mvp);
+            string nextRespawn = "";
+            Mvp mvp = null;
+            bool trackForOtherPlayer = ckBoxTrackOtherPlayer.Checked;
+            bool disclaimer;
+
+            if (trackForOtherPlayer)
+            {
+                disclaimer = GetUserAnswer();
+
+                if (disclaimer)
+                {
+                    nextRespawn = GetNextRespawnTime();
+                    mvp = InstantiateMvpObject(btnPhreeoni.Text, btnPhreeoni, nextRespawn);
+                    DisableButtonControl(mvp.Name);
+                    db.RegisterMvpAsKilled(mvp, true);
+
+                }
+                else
+                    return;
+
+            }
+            else
+            {
+                nextRespawn = GetNextRespawnTime();
+                mvp = InstantiateMvpObject(btnPhreeoni.Text, btnPhreeoni, nextRespawn);
+                DisableButtonControl(mvp.Name);
+                db.RegisterMvpAsKilled(mvp, false);
+            }
+
             UpdateTextBox();
         }
 
         private void btnTurtleGeneral_Click(object sender, EventArgs e)
         {
-            string nextRespawn = GetNextRespawnTime();
-            Mvp mvp = InstantiateMvpObject(btnTurtleGeneral.Text, btnTurtleGeneral, nextRespawn);
-            DisableButtonControl(mvp.Name);
-            db.RegisterMvpAsKilled(mvp);
+            string nextRespawn = "";
+            Mvp mvp = null;
+            bool trackForOtherPlayer = ckBoxTrackOtherPlayer.Checked;
+            bool disclaimer;
+
+            if (trackForOtherPlayer)
+            {
+                disclaimer = GetUserAnswer();
+
+                if (disclaimer)
+                {
+                    nextRespawn = GetNextRespawnTime();
+                    mvp = InstantiateMvpObject(btnTurtleGeneral.Text, btnTurtleGeneral, nextRespawn);
+                    DisableButtonControl(mvp.Name);
+                    db.RegisterMvpAsKilled(mvp, true);
+
+                }
+                else
+                    return;
+
+            }
+            else
+            {
+                nextRespawn = GetNextRespawnTime();
+                mvp = InstantiateMvpObject(btnTurtleGeneral.Text, btnTurtleGeneral, nextRespawn);
+                DisableButtonControl(mvp.Name);
+                db.RegisterMvpAsKilled(mvp, false);
+            }
+
             UpdateTextBox();
+        }
+
+        /*
+         * Displays and get user input as to tracking MVP for others
+         * 
+         */
+        public bool GetUserAnswer()
+        {
+            bool userAnswer = false;
+            string message = "You are tracking this MVP for another player and will not add it to your totals. ";
+            message += "Do you wish to confirm?";
+
+            DialogResult dialogResult = MessageBox.Show(message, "Tracking MVP for other player", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+                userAnswer = true;
+            else if (dialogResult == DialogResult.No)
+                userAnswer = false;
+
+            return userAnswer;
         }
 
         /*
