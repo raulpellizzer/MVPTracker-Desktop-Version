@@ -63,6 +63,7 @@
             this.btnStatistics = new System.Windows.Forms.Button();
             this.ckBoxTrackOtherPlayer = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.ckBoxHideTimes = new System.Windows.Forms.CheckBox();
             this.gpBoxMvp.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -181,6 +182,7 @@
             // 
             // btnPharaoh
             // 
+            this.btnPharaoh.ForeColor = System.Drawing.Color.Red;
             this.btnPharaoh.Image = global::MvpTracker.Properties.Resources.Pharaoh;
             this.btnPharaoh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPharaoh.Location = new System.Drawing.Point(461, 215);
@@ -193,6 +195,7 @@
             // 
             // btnOsiris
             // 
+            this.btnOsiris.ForeColor = System.Drawing.Color.Red;
             this.btnOsiris.Image = global::MvpTracker.Properties.Resources.Osiris;
             this.btnOsiris.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOsiris.Location = new System.Drawing.Point(461, 171);
@@ -277,6 +280,7 @@
             // 
             // btnLordOfDeath
             // 
+            this.btnLordOfDeath.ForeColor = System.Drawing.Color.Red;
             this.btnLordOfDeath.Image = global::MvpTracker.Properties.Resources.Lord_of_Death;
             this.btnLordOfDeath.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLordOfDeath.Location = new System.Drawing.Point(241, 215);
@@ -397,6 +401,7 @@
             // 
             // btnDarkLord
             // 
+            this.btnDarkLord.ForeColor = System.Drawing.Color.Red;
             this.btnDarkLord.Image = global::MvpTracker.Properties.Resources.Dark_Lord;
             this.btnDarkLord.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDarkLord.Location = new System.Drawing.Point(22, 82);
@@ -421,6 +426,7 @@
             // 
             // btnDoppelganger
             // 
+            this.btnDoppelganger.ForeColor = System.Drawing.Color.Red;
             this.btnDoppelganger.Image = global::MvpTracker.Properties.Resources.Doppelganger;
             this.btnDoppelganger.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDoppelganger.Location = new System.Drawing.Point(22, 126);
@@ -482,11 +488,24 @@
             this.label4.TabIndex = 28;
             this.label4.Text = "(Do not add to my totals)";
             // 
+            // ckBoxHideTimes
+            // 
+            this.ckBoxHideTimes.AutoSize = true;
+            this.ckBoxHideTimes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckBoxHideTimes.Location = new System.Drawing.Point(744, 533);
+            this.ckBoxHideTimes.Name = "ckBoxHideTimes";
+            this.ckBoxHideTimes.Size = new System.Drawing.Size(77, 17);
+            this.ckBoxHideTimes.TabIndex = 29;
+            this.ckBoxHideTimes.Text = "Hide info";
+            this.ckBoxHideTimes.UseVisualStyleBackColor = true;
+            this.ckBoxHideTimes.CheckedChanged += new System.EventHandler(this.ckBoxHideTimes_CheckedChanged);
+            // 
             // mvpTrackerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1385, 567);
+            this.ClientSize = new System.Drawing.Size(1385, 599);
+            this.Controls.Add(this.ckBoxHideTimes);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.ckBoxTrackOtherPlayer);
             this.Controls.Add(this.btnStatistics);
@@ -542,6 +561,7 @@
         private System.Windows.Forms.Button btnStatistics;
         private System.Windows.Forms.CheckBox ckBoxTrackOtherPlayer;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox ckBoxHideTimes;
     }
 }
 

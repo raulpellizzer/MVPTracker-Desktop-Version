@@ -270,12 +270,12 @@ namespace MvpTracker
          * Returns next respanw time, for RagnaClassic one hour from now
          * 
          */
-        public string GetNextRespawnTime() 
+        public string GetNextRespawnTime(int respawnTime) 
         {
             string nextRespawn;
 
             if (environment == "prod")
-                nextRespawn = DateTime.Now.AddHours(1).ToString("yyyy-MM-dd HH:mm:ss.fff");
+                nextRespawn = DateTime.Now.AddHours(respawnTime).ToString("yyyy-MM-dd HH:mm:ss.fff");
             else
                 nextRespawn = DateTime.Now.AddSeconds(15).ToString("yyyy-MM-dd HH:mm:ss.fff");
 
@@ -305,7 +305,7 @@ namespace MvpTracker
 
                 if (disclaimer)
                 {
-                    nextRespawn = GetNextRespawnTime();
+                    nextRespawn = GetNextRespawnTime(1);
                     mvp = InstantiateMvpObject(btnBaphomet.Text, btnBaphomet, nextRespawn);
                     DisableButtonControl(mvp.Name);
                     db.RegisterMvpAsKilled(mvp, true);
@@ -315,7 +315,7 @@ namespace MvpTracker
 
             } else
             {
-                nextRespawn = GetNextRespawnTime();
+                nextRespawn = GetNextRespawnTime(1);
                 mvp = InstantiateMvpObject(btnBaphomet.Text, btnBaphomet, nextRespawn);
                 DisableButtonControl(mvp.Name);
                 db.RegisterMvpAsKilled(mvp, false);
@@ -337,7 +337,7 @@ namespace MvpTracker
 
                 if (disclaimer)
                 {
-                    nextRespawn = GetNextRespawnTime();
+                    nextRespawn = GetNextRespawnTime(2);
                     mvp = InstantiateMvpObject(btnDarkLord.Text, btnDarkLord, nextRespawn);
                     DisableButtonControl(mvp.Name);
                     db.RegisterMvpAsKilled(mvp, true);
@@ -349,7 +349,7 @@ namespace MvpTracker
             }
             else
             {
-                nextRespawn = GetNextRespawnTime();
+                nextRespawn = GetNextRespawnTime(2);
                 mvp = InstantiateMvpObject(btnDarkLord.Text, btnDarkLord, nextRespawn);
                 DisableButtonControl(mvp.Name);
                 db.RegisterMvpAsKilled(mvp, false);
@@ -371,7 +371,7 @@ namespace MvpTracker
 
                 if (disclaimer)
                 {
-                    nextRespawn = GetNextRespawnTime();
+                    nextRespawn = GetNextRespawnTime(2);
                     mvp = InstantiateMvpObject(btnDoppelganger.Text, btnDoppelganger, nextRespawn);
                     DisableButtonControl(mvp.Name);
                     db.RegisterMvpAsKilled(mvp, true);
@@ -382,7 +382,7 @@ namespace MvpTracker
             }
             else
             {
-                nextRespawn = GetNextRespawnTime();
+                nextRespawn = GetNextRespawnTime(2);
                 mvp = InstantiateMvpObject(btnDoppelganger.Text, btnDoppelganger, nextRespawn);
                 DisableButtonControl(mvp.Name);
                 db.RegisterMvpAsKilled(mvp, false);
@@ -404,7 +404,7 @@ namespace MvpTracker
 
                 if (disclaimer)
                 {
-                    nextRespawn = GetNextRespawnTime();
+                    nextRespawn = GetNextRespawnTime(1);
                     mvp = InstantiateMvpObject(btnDracula.Text, btnDracula, nextRespawn);
                     DisableButtonControl(mvp.Name);
                     db.RegisterMvpAsKilled(mvp, true);
@@ -416,7 +416,7 @@ namespace MvpTracker
             }
             else
             {
-                nextRespawn = GetNextRespawnTime();
+                nextRespawn = GetNextRespawnTime(1);
                 mvp = InstantiateMvpObject(btnDracula.Text, btnDracula, nextRespawn);
                 DisableButtonControl(mvp.Name);
                 db.RegisterMvpAsKilled(mvp, false);
@@ -438,7 +438,7 @@ namespace MvpTracker
 
                 if (disclaimer)
                 {
-                    nextRespawn = GetNextRespawnTime();
+                    nextRespawn = GetNextRespawnTime(1);
                     mvp = InstantiateMvpObject(btnDrake.Text, btnDrake, nextRespawn);
                     DisableButtonControl(mvp.Name);
                     db.RegisterMvpAsKilled(mvp, true);
@@ -450,7 +450,7 @@ namespace MvpTracker
             }
             else
             {
-                nextRespawn = GetNextRespawnTime();
+                nextRespawn = GetNextRespawnTime(1);
                 mvp = InstantiateMvpObject(btnDrake.Text, btnDrake, nextRespawn);
                 DisableButtonControl(mvp.Name);
                 db.RegisterMvpAsKilled(mvp, false);
@@ -472,7 +472,7 @@ namespace MvpTracker
 
                 if (disclaimer)
                 {
-                    nextRespawn = GetNextRespawnTime();
+                    nextRespawn = GetNextRespawnTime(1);
                     mvp = InstantiateMvpObject(btnEddga.Text, btnEddga, nextRespawn);
                     DisableButtonControl(mvp.Name);
                     db.RegisterMvpAsKilled(mvp, true);
@@ -484,7 +484,7 @@ namespace MvpTracker
             }
             else
             {
-                nextRespawn = GetNextRespawnTime();
+                nextRespawn = GetNextRespawnTime(1);
                 mvp = InstantiateMvpObject(btnEddga.Text, btnEddga, nextRespawn);
                 DisableButtonControl(mvp.Name);
                 db.RegisterMvpAsKilled(mvp, false);
@@ -506,7 +506,7 @@ namespace MvpTracker
 
                 if (disclaimer)
                 {
-                    nextRespawn = GetNextRespawnTime();
+                    nextRespawn = GetNextRespawnTime(1);
                     mvp = InstantiateMvpObject(btnEvilSnakeLord.Text, btnEvilSnakeLord, nextRespawn);
                     DisableButtonControl(mvp.Name);
                     db.RegisterMvpAsKilled(mvp, true);
@@ -517,7 +517,7 @@ namespace MvpTracker
             }
             else
             {
-                nextRespawn = GetNextRespawnTime();
+                nextRespawn = GetNextRespawnTime(1);
                 mvp = InstantiateMvpObject(btnEvilSnakeLord.Text, btnEvilSnakeLord, nextRespawn);
                 DisableButtonControl(mvp.Name);
                 db.RegisterMvpAsKilled(mvp, false);
@@ -539,7 +539,7 @@ namespace MvpTracker
 
                 if (disclaimer)
                 {
-                    nextRespawn = GetNextRespawnTime();
+                    nextRespawn = GetNextRespawnTime(1);
                     mvp = InstantiateMvpObject(btnHatii.Text, btnHatii, nextRespawn);
                     DisableButtonControl(mvp.Name);
                     db.RegisterMvpAsKilled(mvp, true);
@@ -551,7 +551,7 @@ namespace MvpTracker
             }
             else
             {
-                nextRespawn = GetNextRespawnTime();
+                nextRespawn = GetNextRespawnTime(1);
                 mvp = InstantiateMvpObject(btnHatii.Text, btnHatii, nextRespawn);
                 DisableButtonControl(mvp.Name);
                 db.RegisterMvpAsKilled(mvp, false);
@@ -573,7 +573,7 @@ namespace MvpTracker
 
                 if (disclaimer)
                 {
-                    nextRespawn = GetNextRespawnTime();
+                    nextRespawn = GetNextRespawnTime(1);
                     mvp = InstantiateMvpObject(btnGTB.Text, btnGTB, nextRespawn);
                     DisableButtonControl(mvp.Name);
                     db.RegisterMvpAsKilled(mvp, true);
@@ -585,7 +585,7 @@ namespace MvpTracker
             }
             else
             {
-                nextRespawn = GetNextRespawnTime();
+                nextRespawn = GetNextRespawnTime(1);
                 mvp = InstantiateMvpObject(btnGTB.Text, btnGTB, nextRespawn);
                 DisableButtonControl(mvp.Name);
                 db.RegisterMvpAsKilled(mvp, false);
@@ -607,7 +607,7 @@ namespace MvpTracker
 
                 if (disclaimer)
                 {
-                    nextRespawn = GetNextRespawnTime();
+                    nextRespawn = GetNextRespawnTime(2);
                     mvp = InstantiateMvpObject(btnHela.Text, btnHela, nextRespawn);
                     DisableButtonControl(mvp.Name);
                     db.RegisterMvpAsKilled(mvp, true);
@@ -619,7 +619,7 @@ namespace MvpTracker
             }
             else
             {
-                nextRespawn = GetNextRespawnTime();
+                nextRespawn = GetNextRespawnTime(2);
                 mvp = InstantiateMvpObject(btnHela.Text, btnHela, nextRespawn);
                 DisableButtonControl(mvp.Name);
                 db.RegisterMvpAsKilled(mvp, false);
@@ -641,7 +641,7 @@ namespace MvpTracker
 
                 if (disclaimer)
                 {
-                    nextRespawn = GetNextRespawnTime();
+                    nextRespawn = GetNextRespawnTime(1);
                     mvp = InstantiateMvpObject(btnScaraba.Text, btnScaraba, nextRespawn);
                     DisableButtonControl(mvp.Name);
                     db.RegisterMvpAsKilled(mvp, true);
@@ -653,7 +653,7 @@ namespace MvpTracker
             }
             else
             {
-                nextRespawn = GetNextRespawnTime();
+                nextRespawn = GetNextRespawnTime(1);
                 mvp = InstantiateMvpObject(btnScaraba.Text, btnScaraba, nextRespawn);
                 DisableButtonControl(mvp.Name);
                 db.RegisterMvpAsKilled(mvp, false);
@@ -675,7 +675,7 @@ namespace MvpTracker
 
                 if (disclaimer)
                 {
-                    nextRespawn = GetNextRespawnTime();
+                    nextRespawn = GetNextRespawnTime(1);
                     mvp = InstantiateMvpObject(btnStormyKnight.Text, btnStormyKnight, nextRespawn);
                     DisableButtonControl(mvp.Name);
                     db.RegisterMvpAsKilled(mvp, true);
@@ -687,7 +687,7 @@ namespace MvpTracker
             }
             else
             {
-                nextRespawn = GetNextRespawnTime();
+                nextRespawn = GetNextRespawnTime(1);
                 mvp = InstantiateMvpObject(btnStormyKnight.Text, btnStormyKnight, nextRespawn);
                 DisableButtonControl(mvp.Name);
                 db.RegisterMvpAsKilled(mvp, false);
@@ -709,7 +709,7 @@ namespace MvpTracker
 
                 if (disclaimer)
                 {
-                    nextRespawn = GetNextRespawnTime();
+                    nextRespawn = GetNextRespawnTime(2);
                     mvp = InstantiateMvpObject(btnLordOfDeath.Text, btnLordOfDeath, nextRespawn);
                     DisableButtonControl(mvp.Name);
                     db.RegisterMvpAsKilled(mvp, true);
@@ -721,7 +721,7 @@ namespace MvpTracker
             }
             else
             {
-                nextRespawn = GetNextRespawnTime();
+                nextRespawn = GetNextRespawnTime(2);
                 mvp = InstantiateMvpObject(btnLordOfDeath.Text, btnLordOfDeath, nextRespawn);
                 DisableButtonControl(mvp.Name);
                 db.RegisterMvpAsKilled(mvp, false);
@@ -743,7 +743,7 @@ namespace MvpTracker
 
                 if (disclaimer)
                 {
-                    nextRespawn = GetNextRespawnTime();
+                    nextRespawn = GetNextRespawnTime(1);
                     mvp = InstantiateMvpObject(btnMayaPurple.Text, btnMayaPurple, nextRespawn);
                     DisableButtonControl(mvp.Name);
                     db.RegisterMvpAsKilled(mvp, true);
@@ -755,7 +755,7 @@ namespace MvpTracker
             }
             else
             {
-                nextRespawn = GetNextRespawnTime();
+                nextRespawn = GetNextRespawnTime(1);
                 mvp = InstantiateMvpObject(btnMayaPurple.Text, btnMayaPurple, nextRespawn);
                 DisableButtonControl(mvp.Name);
                 db.RegisterMvpAsKilled(mvp, false);
@@ -777,7 +777,7 @@ namespace MvpTracker
 
                 if (disclaimer)
                 {
-                    nextRespawn = GetNextRespawnTime();
+                    nextRespawn = GetNextRespawnTime(1);
                     mvp = InstantiateMvpObject(btnMaya.Text, btnMaya, nextRespawn);
                     DisableButtonControl(mvp.Name);
                     db.RegisterMvpAsKilled(mvp, true);
@@ -789,7 +789,7 @@ namespace MvpTracker
             }
             else
             {
-                nextRespawn = GetNextRespawnTime();
+                nextRespawn = GetNextRespawnTime(1);
                 mvp = InstantiateMvpObject(btnMaya.Text, btnMaya, nextRespawn);
                 DisableButtonControl(mvp.Name);
                 db.RegisterMvpAsKilled(mvp, false);
@@ -811,7 +811,7 @@ namespace MvpTracker
 
                 if (disclaimer)
                 {
-                    nextRespawn = GetNextRespawnTime();
+                    nextRespawn = GetNextRespawnTime(1);
                     mvp = InstantiateMvpObject(btnMistress.Text, btnMistress, nextRespawn);
                     DisableButtonControl(mvp.Name);
                     db.RegisterMvpAsKilled(mvp, true);
@@ -823,7 +823,7 @@ namespace MvpTracker
             }
             else
             {
-                nextRespawn = GetNextRespawnTime();
+                nextRespawn = GetNextRespawnTime(1);
                 mvp = InstantiateMvpObject(btnMistress.Text, btnMistress, nextRespawn);
                 DisableButtonControl(mvp.Name);
                 db.RegisterMvpAsKilled(mvp, false);
@@ -845,7 +845,7 @@ namespace MvpTracker
 
                 if (disclaimer)
                 {
-                    nextRespawn = GetNextRespawnTime();
+                    nextRespawn = GetNextRespawnTime(1);
                     mvp = InstantiateMvpObject(btnMoonlightFlower.Text, btnMoonlightFlower, nextRespawn);
                     DisableButtonControl(mvp.Name);
                     db.RegisterMvpAsKilled(mvp, true);
@@ -857,7 +857,7 @@ namespace MvpTracker
             }
             else
             {
-                nextRespawn = GetNextRespawnTime();
+                nextRespawn = GetNextRespawnTime(1);
                 mvp = InstantiateMvpObject(btnMoonlightFlower.Text, btnMoonlightFlower, nextRespawn);
                 DisableButtonControl(mvp.Name);
                 db.RegisterMvpAsKilled(mvp, false);
@@ -879,7 +879,7 @@ namespace MvpTracker
 
                 if (disclaimer)
                 {
-                    nextRespawn = GetNextRespawnTime();
+                    nextRespawn = GetNextRespawnTime(1);
                     mvp = InstantiateMvpObject(btnOrcHero.Text, btnOrcHero, nextRespawn);
                     DisableButtonControl(mvp.Name);
                     db.RegisterMvpAsKilled(mvp, true);
@@ -891,7 +891,7 @@ namespace MvpTracker
             }
             else
             {
-                nextRespawn = GetNextRespawnTime();
+                nextRespawn = GetNextRespawnTime(1);
                 mvp = InstantiateMvpObject(btnOrcHero.Text, btnOrcHero, nextRespawn);
                 DisableButtonControl(mvp.Name);
                 db.RegisterMvpAsKilled(mvp, false);
@@ -913,7 +913,7 @@ namespace MvpTracker
 
                 if (disclaimer)
                 {
-                    nextRespawn = GetNextRespawnTime();
+                    nextRespawn = GetNextRespawnTime(1);
                     mvp = InstantiateMvpObject(btnOrcLord.Text, btnOrcLord, nextRespawn);
                     DisableButtonControl(mvp.Name);
                     db.RegisterMvpAsKilled(mvp, true);
@@ -925,7 +925,7 @@ namespace MvpTracker
             }
             else
             {
-                nextRespawn = GetNextRespawnTime();
+                nextRespawn = GetNextRespawnTime(1);
                 mvp = InstantiateMvpObject(btnOrcLord.Text, btnOrcLord, nextRespawn);
                 DisableButtonControl(mvp.Name);
                 db.RegisterMvpAsKilled(mvp, false);
@@ -947,7 +947,7 @@ namespace MvpTracker
 
                 if (disclaimer)
                 {
-                    nextRespawn = GetNextRespawnTime();
+                    nextRespawn = GetNextRespawnTime(1);
                     mvp = InstantiateMvpObject(btnOsiris.Text, btnOsiris, nextRespawn);
                     DisableButtonControl(mvp.Name);
                     db.RegisterMvpAsKilled(mvp, true);
@@ -959,7 +959,7 @@ namespace MvpTracker
             }
             else
             {
-                nextRespawn = GetNextRespawnTime();
+                nextRespawn = GetNextRespawnTime(1);
                 mvp = InstantiateMvpObject(btnOsiris.Text, btnOsiris, nextRespawn);
                 DisableButtonControl(mvp.Name);
                 db.RegisterMvpAsKilled(mvp, false);
@@ -981,7 +981,7 @@ namespace MvpTracker
 
                 if (disclaimer)
                 {
-                    nextRespawn = GetNextRespawnTime();
+                    nextRespawn = GetNextRespawnTime(1);
                     mvp = InstantiateMvpObject(btnPharaoh.Text, btnPharaoh, nextRespawn);
                     DisableButtonControl(mvp.Name);
                     db.RegisterMvpAsKilled(mvp, true);
@@ -993,7 +993,7 @@ namespace MvpTracker
             }
             else
             {
-                nextRespawn = GetNextRespawnTime();
+                nextRespawn = GetNextRespawnTime(1);
                 mvp = InstantiateMvpObject(btnPharaoh.Text, btnPharaoh, nextRespawn);
                 DisableButtonControl(mvp.Name);
                 db.RegisterMvpAsKilled(mvp, false);
@@ -1015,7 +1015,7 @@ namespace MvpTracker
 
                 if (disclaimer)
                 {
-                    nextRespawn = GetNextRespawnTime();
+                    nextRespawn = GetNextRespawnTime(1);
                     mvp = InstantiateMvpObject(btnPhreeoni.Text, btnPhreeoni, nextRespawn);
                     DisableButtonControl(mvp.Name);
                     db.RegisterMvpAsKilled(mvp, true);
@@ -1027,7 +1027,7 @@ namespace MvpTracker
             }
             else
             {
-                nextRespawn = GetNextRespawnTime();
+                nextRespawn = GetNextRespawnTime(1);
                 mvp = InstantiateMvpObject(btnPhreeoni.Text, btnPhreeoni, nextRespawn);
                 DisableButtonControl(mvp.Name);
                 db.RegisterMvpAsKilled(mvp, false);
@@ -1049,7 +1049,7 @@ namespace MvpTracker
 
                 if (disclaimer)
                 {
-                    nextRespawn = GetNextRespawnTime();
+                    nextRespawn = GetNextRespawnTime(1);
                     mvp = InstantiateMvpObject(btnTurtleGeneral.Text, btnTurtleGeneral, nextRespawn);
                     DisableButtonControl(mvp.Name);
                     db.RegisterMvpAsKilled(mvp, true);
@@ -1061,7 +1061,7 @@ namespace MvpTracker
             }
             else
             {
-                nextRespawn = GetNextRespawnTime();
+                nextRespawn = GetNextRespawnTime(1);
                 mvp = InstantiateMvpObject(btnTurtleGeneral.Text, btnTurtleGeneral, nextRespawn);
                 DisableButtonControl(mvp.Name);
                 db.RegisterMvpAsKilled(mvp, false);
@@ -1130,6 +1130,7 @@ namespace MvpTracker
 
             btnTest.Enabled = false;
             btnTest.Visible = false;
+            ckBoxHideTimes.Checked = true;
         }
 
         /*
@@ -1147,6 +1148,20 @@ namespace MvpTracker
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        /*
+         * Hide / display MVP times uppon selection
+         * 
+         */
+        private void ckBoxHideTimes_CheckedChanged(object sender, EventArgs e)
+        {
+            bool hideInfo = ckBoxHideTimes.Checked;
+
+            if (hideInfo)
+                txtBoxNextRespawns.PasswordChar = '*';
+            else
+                txtBoxNextRespawns.PasswordChar = '\0';
         }
     }
 }
