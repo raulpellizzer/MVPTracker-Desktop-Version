@@ -133,11 +133,11 @@
   <data name="Turtle General" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Turtle General.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Orc Lord" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Orc Lord.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Stormy Knight" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Stormy Knight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Eddga" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Eddga.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Hatii" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Hatii.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,8 +148,11 @@
   <data name="Phreeoni" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Phreeoni.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Scaraba Queen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Scaraba Queen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Hela" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hela.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dark Lord" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dark Lord.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="GTB" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GTB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,8 +181,8 @@
   <data name="Orc Hero" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Orc Hero.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Eddga" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Eddga.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Orc Lord" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Orc Lord.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Dracula" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dracula.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,10 +190,10 @@
   <data name="Pharaoh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pharaoh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Dark Lord" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Dark Lord.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Scaraba Queen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Scaraba Queen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Hela" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Hela.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="abysmal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\abysmal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

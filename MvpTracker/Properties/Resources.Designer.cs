@@ -63,6 +63,16 @@ namespace MvpTracker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap abysmal {
+            get {
+                object obj = ResourceManager.GetObject("abysmal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap amon_ra {
             get {
                 object obj = ResourceManager.GetObject("amon_ra", resourceCulture);
