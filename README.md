@@ -1,6 +1,6 @@
 # MVPTracker — Desktop Version
 
-> A Windows desktop application for tracking **Ragnarok Online** MVP (boss monster) respawn timers, built with C# and Windows Forms.
+> A Windows desktop application for tracking **Ragnarok Online** MVP (boss monster) respawn timers, built with C# and Windows Forms. DISCLAIMER: This is a quick *for fun* project intended to run on your localhost only. This is NOT production ready.
 
 ---
 
@@ -40,25 +40,6 @@
 - **Kill statistics window** — a dedicated grid view shows how many times you have killed each MVP, sorted descending.
 - **24 MVPs supported out of the box** — covers the most popular bosses from classic Ragnarok Online servers.
 - **Persistent storage** — all tracking data is persisted in a Microsoft SQL Server database and survives application restarts.
-
----
-
-## Screenshots / Demo
-
-> **📸 Placeholder** — Screenshots of the running application have not yet been added to this repository.
->
-> To add screenshots:
-> 1. Run the application and take screenshots of the main tracker form and the statistics window.
-> 2. Save the images inside an `Images/Screenshots/` directory (create it if it doesn't exist).
-> 3. Replace the placeholder blocks below with relative Markdown image links, e.g.:
->    ```markdown
->    ![Main Tracker Window](Images/Screenshots/main-form.png)
->    ![Statistics Window](Images/Screenshots/statistics-form.png)
->    ```
-
-| Main Tracker Window | Statistics Window |
-|---|---|
-| _Screenshot pending_ | _Screenshot pending_ |
 
 ---
 
@@ -151,36 +132,7 @@ MVPTracker-Desktop-Version/
 
 ### Database Setup
 
-The application requires two tables — `Mvp` and `MvpTracking` — in a SQL Server database named `MvpTracker` on `localhost`.
-
-> **⚠️ Placeholder** — A SQL setup script has not yet been included in the repository.
-> The maintainer should add a `Database/setup.sql` file with `CREATE TABLE` statements and initial MVP data.
-> The expected schema, based on the application source, is described below.
-
-**Minimum expected schema:**
-
-```sql
-CREATE DATABASE MvpTracker;
-GO
-
-USE MvpTracker;
-GO
-
-CREATE TABLE Mvp (
-    id   INT PRIMARY KEY,
-    name NVARCHAR(100) NOT NULL
-);
-
-CREATE TABLE MvpTracking (
-    id                INT PRIMARY KEY,          -- matches Mvp.id
-    killed_time       DATETIME NULL,
-    next_respawn_time DATETIME NULL,
-    is_mvp_dead       BIT NOT NULL DEFAULT 0,
-    killed_count      INT NOT NULL DEFAULT 0
-);
-```
-
-Populate the `Mvp` and `MvpTracking` tables with one row per MVP (see [Tracked MVPs](#tracked-mvps) for the full list).
+To be added in future updates.
 
 ### Configuration
 
@@ -240,34 +192,6 @@ To distribute the application to end users:
 
 ---
 
-## Testing
-
-There is currently **no automated test project** in this solution. All validation is performed manually by running the application.
-
-If you wish to add unit tests:
-
-1. Add a new **NUnit** or **MSTest** project to the solution:
-   ```
-   File → Add → New Project → NUnit Test Project (.NET Framework)
-   ```
-2. Add a project reference to `MvpTracker`.
-3. Write tests targeting the `Database` and `Mvp` classes.
-
-Pull requests that introduce new logic are encouraged to include corresponding tests.
-
----
-
-## Linting / Formatting
-
-There is no automated linter or formatter configured in this repository.
-
-**Recommended tools:**
-- [**StyleCop Analyzers**](https://github.com/DotNetAnalyzers/StyleCopAnalyzers) — enforce C# style rules via Roslyn (add via NuGet).
-- **Visual Studio built-in formatter** — `Edit → Advanced → Format Document` (`Ctrl+K, Ctrl+D`).
-- [**EditorConfig**](https://editorconfig.org/) — add a `.editorconfig` file to the repo root to share formatting rules across editors.
-
----
-
 ## Usage Guide
 
 ### Basic workflow
@@ -294,7 +218,7 @@ There is no automated linter or formatter configured in this repository.
 
 ## Tracked MVPs
 
-The following 24 bosses are pre-configured in the application. Respawn times are listed as they are coded in the application (minutes after kill).
+The following 24 bosses (old times Ragnarok Online) are pre-configured in the application. Respawn times are listed as they are coded in the application (minutes after kill).
 
 | # | MVP Name | Respawn (min) |
 |---|---|---|
@@ -347,62 +271,6 @@ A: Respawn windows in Ragnarok Online have a ±0–10 minute variance on most se
 
 **Q: What is the `environment` variable in `MvpTrackerForm.cs`?**  
 A: When `environment` is set to anything other than `"prod"`, `GetNextRespawnTime` uses a 15-second window instead of the real respawn time. This is a development/testing convenience. Set it back to `"prod"` before building a release.
-
----
-
-## Roadmap
-
-> **Note:** This roadmap is aspirational and reflects ideas derived from the existing codebase. Maintainer input is required to confirm, prioritise, or remove items.
-
-- [ ] Add a SQL setup script (`Database/setup.sql`) so new users can initialise the database without reverse-engineering the schema.
-- [ ] Replace hard-coded respawn times with database-driven configuration so new MVPs can be added without a rebuild.
-- [ ] Implement an "undo last kill" button.
-- [ ] Add a countdown timer display (time remaining until respawn) instead of a static timestamp.
-- [ ] Support multiple server profiles (different respawn timers per server type).
-- [ ] Add an automated test project.
-- [ ] Introduce a `.editorconfig` and StyleCop to enforce consistent code style.
-- [ ] Package as a ClickOnce or Inno Setup installer for easier distribution.
-- [ ] Add application version number to the main window title bar.
-- [ ] Investigate replacing `System.Data.SqlClient` with `Microsoft.Data.Sqlite` to remove the SQL Server dependency for single-user installs.
-
----
-
-## Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. **Fork** the repository and create a feature branch from `main`:
-   ```bash
-   git checkout -b feature/my-improvement
-   ```
-2. **Make your changes** — keep commits small and focused.
-3. **Test manually** — there is no automated test suite yet, so please verify the affected flows in a running instance.
-4. **Ensure the project builds cleanly** in Visual Studio (no errors or new warnings at warning level 4).
-5. **Open a Pull Request** against `main` with a clear description of what was changed and why.
-
-> There is currently no `CONTRIBUTING.md` file in this repository. The maintainer may wish to add one with more detailed guidelines (branching strategy, commit message format, code-review process, etc.).
-
----
-
-## License
-
-> **⚠️ Placeholder** — This repository does not currently contain a `LICENSE` file.
->
-> The copyright header in `MvpTracker/Properties/AssemblyInfo.cs` states:
-> ```
-> Copyright © 2024
-> ```
-> Until a license is explicitly added, all rights are reserved by the author and the code may **not** be redistributed or used in other projects without written permission.
->
-> The maintainer should choose an appropriate open-source license (e.g., [MIT](https://choosealicense.com/licenses/mit/), [GPL-3.0](https://choosealicense.com/licenses/gpl-3.0/)) and add a `LICENSE` file to the root of the repository.
-
----
-
-## Security
-
-- **Connection strings** — The default configuration uses Windows Integrated Authentication. If you modify `Database.cs` to accept a username/password, **never** commit credentials to source control. Use environment variables or a secrets manager instead.
-- **SQL injection** — The current `Database.cs` builds SQL queries via string concatenation which may be vulnerable to SQL injection if MVP names or other values come from untrusted input. Refactoring to use parameterised queries (`SqlCommand.Parameters`) is strongly recommended.
-- **Responsible disclosure** — If you discover a security vulnerability in this project, please report it privately to the repository owner via GitHub's [Private Vulnerability Reporting](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing/privately-reporting-a-security-vulnerability) feature rather than opening a public issue.
 
 ---
 
